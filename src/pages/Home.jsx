@@ -1,4 +1,4 @@
-import '../home.css'
+import '../styles/home.css'
 import modules_data from '../module_data.json'
 import tooltip_data from '../tooltip_data.json'
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,7 @@ function ModuleCard({name, id, image, points}){
             <div className='module_index'>
                 {id}
             </div>
-            <img src={"/"+image} alt="image"></img>
+            <img src={`${window.location.origin}/module_education_rights/`+image} alt="image"></img>
             <div className='module_name module_info_cont'>{name}</div>
             <div className='module_points module_info_cont'>{points} {" Points"}</div>
         </div>
@@ -70,7 +70,7 @@ function Bottom(){
 const modules = modules_data.modules.map((module) => {
     return (
         <ModuleCard 
-            key = {module.title} 
+            key = {module.id} 
             name = {module.title}
             id = {module.id}
             image = {module.image}
@@ -138,7 +138,7 @@ export default function Home(){
 
             <article>
                 <h1 className='modules_heading'>
-                    Play theme mini games and learn more about the <Tooltip title="Indian Laws"/>that protect your rights
+                    Play these mini games and learn more about the <Tooltip title="Indian Laws"/>that protect your rights
                 </h1>
                 <div className='mini_game_container'>
                     <div className='mini_game'></div>

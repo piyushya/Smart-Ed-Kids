@@ -1,0 +1,75 @@
+/* body{
+    overflow: hidden;
+} */
+
+.scene_view{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.scene_backImage{
+    width: 100%;
+    height: auto;
+    filter: brightness(50%);
+}
+
+.scene_frontImage{
+    position: absolute;
+    height: 100%;
+    bottom: -4rem;
+    left: 0;
+}
+
+.scene_view p{
+    position: absolute;
+    bottom: 2rem;
+    left: 3rem;
+    background-color: rgb(51, 33, 62);
+    color: rgb(134, 91, 187);
+    padding: 2rem;
+    width: 70%;
+    font-size: 1.5rem;
+    border-top: 1rem solid rgb(4, 4, 44);
+    border-radius: 0.5rem;
+}
+
+.nav_btn_container{
+    position: absolute;
+    bottom: 5rem;
+    right: 3rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.scene_view button{
+    background-color: rgb(13, 104, 231);
+    border: 0;
+    border-bottom: 0.4rem solid rgb(26, 19, 87);
+    color: rgb(24, 19, 44);
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 0.2rem;
+}
+
+.scene_view button:hover{
+    background-color: rgb(71, 71, 199);
+}
+
+.home_button{
+    top: 1rem;
+    right: 3rem;
+    position: absolute;
+}
+
+.test_container{
+    position: absolute;
+    top: 40%;
+    right: 2rem;
+    transform: translate(0, -50%);
+    right: 2rem;
+    background-color: rgb(23, 23, 69);
+    padding: 1rem;
+    color: white;
+}
