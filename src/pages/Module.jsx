@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import modules_data from '../module_data.json'
-import tooltip_data from '../tooltip_data.json'
 import { useParams } from "react-router-dom";
 import '../styles/module.css'
 
 export default function Module() {
     const {id} = useParams();
     const [score, setScore] = useState(0);
-    const [tooltip_desc, setTooltip_desc] = useState("");
     const [sceneIndex, setSceneIndex] = useState(0);
 
     const navigate = useNavigate();
@@ -26,9 +24,9 @@ export default function Module() {
     const test = module.game.test;
     const options = test.options.map((option, index) => {
         return (
-            <li key={index}>
+            <button className='option_button' key={index}>
                 {option}
-            </li>
+            </button>
         )
     });
 
@@ -44,9 +42,9 @@ export default function Module() {
         return (
             <div className='test_container'>
                 <h1>{test.text}</h1>
-                <ul>
+                <div className='options_container'>
                     {options}
-                </ul>
+                </div>
             </div>
         )
     }
@@ -56,44 +54,23 @@ export default function Module() {
             <div className='scene_view'>
                 <img className="scene_backImage" src={`${window.location.origin}/module_education_rights/`+ scene.backImage}></img>
                 <img className="scene_frontImage" src={`${window.location.origin}/module_education_rights/`+ scene.frontImage}></img>
-                <p>{scene.text}</p>
-                <div className='nav_btn_container'>
-                    {sceneIndex > 0 && <button className="prev_button module_nav_button" onClick = {prevScene}>Prev</button>}
-                    {sceneIndex < (scenes.length-1) && <button className="next_button module_nav_button" onClick = {nextScene}>Next</button>}
+                <div className='scene_info'>
+                    <p className='scene_text'>{scene.text}</p>
+                    <div className='nav_btn_container'>
+                        <button disabled={!(sceneIndex > 0)} className="prev_button module_nav_button" onClick = {prevScene}>⏮️</button>
+                        <button disabled={!(sceneIndex < (scenes.length-1))} className="next_button module_nav_button" onClick = {nextScene}>⏭️</button>
+                    </div>
                 </div>
-                <button className="home_button" onClick = {() => {
+                <button className="home_button module_nav_button" onClick = {() => {
                     navigate('/');
-                }}>Home</button>
+                }}>🏠</button>
                 {sceneIndex === (scenes.length-1) && <TestContainer/>}
             </div>
         )
     }
 
-    function Tooltip({title}){
-        function showDescription(){
-            if(tooltip_desc === ""){
-                setTooltip_desc(tooltip_data[title]);
-            }
-        }
-        return(
-            <>
-                {" "}<span onClick={showDescription} className='tooltip_title'>{title}</span>{" "}
-            </>
-        )
-    }
-
     return (
         <div>
-            {tooltip_desc.length > 0 && 
-            <div className='tooltip_container'>
-                <div className='tooltip_wrapper'>
-                    {tooltip_desc}
-                    <button className='tooltip_close_btn' onClick={()=>{
-                        console.log("close tooltip");
-                        setTooltip_desc("");
-                    }}>close</button>
-                </div>
-            </div>}
             {scenes[sceneIndex]}
         </div>
     )
