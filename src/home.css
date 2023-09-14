@@ -1,0 +1,128 @@
+.nav_bar{
+    top: -10rem;
+    z-index: -1;
+    background-color: rgba(0, 255, 4, 0.68);
+    width: 100%;
+}
+
+.nav_bar img{
+    margin-top: -10rem;
+}
+
+.nav_container{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+}
+
+.nav_button{
+    margin: 0 1rem;
+    border: 0;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0.2rem;
+}
+
+.nav_button:hover{
+    background-color: rgb(73, 32, 131);
+    border-bottom: 0.5rem solid rgb(45, 15, 95);
+}
+
+.nav_button_profile{
+    background-color: rgb(0, 110, 255);
+    border-bottom: 0.5rem solid rgb(25, 62, 182);
+}
+
+.nav_button_language{
+    background-color: rgb(38, 174, 7);
+    border-bottom: 0.5rem solid rgb(32, 108, 12);
+}
+
+.nav_button_leaderboard{
+    background-color: rgb(255, 0, 72);
+    border-bottom: 0.5rem solid rgb(169, 19, 19);
+}
+
+.nav_button_get-help{
+    background-color: rgb(255, 208, 0);
+    border-bottom: 0.5rem solid rgb(169, 146, 17);
+}
+
+.modules_heading{
+    margin:1rem 0rem;
+    padding: 1rem 2rem 1rem 2rem;
+    margin-bottom: 2rem;
+    background-color: rgb(0, 174, 255);
+}
+
+.modules_container{
+    display: flex;
+    gap: 1rem;
+    padding: 0rem 1rem;
+    justify-content: center;
+}
+
+.module_card{
+    padding: 1rem;
+    background-color: rgb(252, 160, 0);
+    width: fit-content;
+    border-radius: 0.2rem;
+    border: 0.3rem solid rgb(255, 255, 255);
+    position: relative;
+}
+
+.module_card:hover{
+    border: 0.3rem solid rgb(73, 56, 99);
+    background-color: rgb(255, 106, 0);
+}
+
+.module_index{
+    background-color: rgb(102, 0, 244);
+    border-bottom: 0.3rem solid rgb(73, 56, 99);
+    border-radius: 0.2rem;
+    width: fit-content;
+    padding: 1rem;
+    color: white;
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+}
+
+.module_info_cont{
+    padding: 0.1rem 0.4rem;
+    text-align: center;
+}
+
+.module_name{
+    background: red;
+    color: white;
+    border-radius: 0rem;
+    width: calc(100% + 1rem);
+    transform: translateX(-1rem);
+    margin-bottom: 1rem;
+}
+
+.module_points{
+    background-color: rgb(4, 255, 41);
+    border-left: 0.4rem solid rgb(0, 184, 0);
+    border-right: 0.4rem solid rgb(0, 184, 0);
+    border-radius: 0.2rem;
+}
+
+.bottom_bar{
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    background-color: rgba(163, 13, 196, 0.719);
+    display: flex;
+}
+
+.foot_info{
+    margin-right: auto;
+}
+
+.bottomBar img{
+    width: 20rem;
+}

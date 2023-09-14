@@ -1,0 +1,217 @@
+{
+    "modules" : [
+        {
+            "title" : "Education Rights",
+            "id" : 1,
+            "points" : 10,
+            "image" : "module_education_rights/happyMaya.png",
+            "game" : {
+                "situations" : [
+                    {
+                        "text" : "A 12-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
+                        "image" : "normalMaya.png"
+                    },
+                    {
+                        "text" : "The nearest school is several kilometers away from her village, and there is no reliable transportation. Walking to school is not feasible due to the distance, especially during the rainy season when roads become impassable.",
+                        "image" : "cautiousMaya.png"
+                    },
+                    {
+                        "text" : "Maya's family struggles to make ends meet, and they cannot afford the expenses associated with sending her to school, such as school fees, uniforms, and books.",
+                        "image" : "sadMaya.png"
+                    }
+                ],
+                "test" : {
+                    "text" : "What Maya and Her Guardians Can Do :",
+                    "options" : [
+                        "Contact Local Authorities",
+                        "Confront Local Authorities",
+                        "Give Up",
+                        "Explore Legal resources"
+                    ],
+                    "correctIndex" : [0, 3],
+                    "explanations" : [
+                        "Maya's family can reach out to local education authorities or government officials to express their concerns and seek assistance. They can inquire about transportation options or subsidies to cover educational expenses for underprivileged students.",
+                        "It's important not to engage in confrontations that could escalate tensions or damage relationships. Instead, they should strive for open, respectful dialogue with local authorities and community members.",
+                        "While it can be disheartening to face barriers to education, Maya and her family should avoid giving up too easily. Persistence and determination are essential when advocating for the right to education.",
+                        "They will explore legal recourse, such as the Right to Education Act or other relevant laws, to address the issue through official channels and ensure that Maya's rights are protected."
+                    ]
+                }
+
+            },
+            "info" : {
+                "text" : "The Right to Education Act (RTE) guarantees free and compulsory education for all children aged 6 to 14 years. It also prohibits discrimination in admission and sets minimum standards for schools."
+            }
+        },
+        {
+            "title" : "Education Rights2",
+            "id" : 2,
+            "points" : 10,
+            "image" : "module_education_rights/happyMaya.png",
+            "game" : {
+                "situations" : [
+                    {
+                        "text" : "A 12-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
+                        "image" : "normalMaya.png"
+                    },
+                    {
+                        "text" : "The nearest school is several kilometers away from her village, and there is no reliable transportation. Walking to school is not feasible due to the distance, especially during the rainy season when roads become impassable.",
+                        "image" : "cautiousMaya.png"
+                    },
+                    {
+                        "text" : "Maya's family struggles to make ends meet, and they cannot afford the expenses associated with sending her to school, such as school fees, uniforms, and books.",
+                        "image" : "sadMaya.png"
+                    }
+                ],
+                "test" : {
+                    "text" : "What Maya and Her Guardians Can Do :",
+                    "options" : [
+                        "Contact Local Authorities",
+                        "Confront Local Authorities",
+                        "Give Up",
+                        "Explore Legal resources"
+                    ],
+                    "correctIndex" : [0, 3],
+                    "explanations" : [
+                        "Maya's family can reach out to local education authorities or government officials to express their concerns and seek assistance. They can inquire about transportation options or subsidies to cover educational expenses for underprivileged students.",
+                        "It's important not to engage in confrontations that could escalate tensions or damage relationships. Instead, they should strive for open, respectful dialogue with local authorities and community members.",
+                        "While it can be disheartening to face barriers to education, Maya and her family should avoid giving up too easily. Persistence and determination are essential when advocating for the right to education.",
+                        "They will explore legal recourse, such as the Right to Education Act or other relevant laws, to address the issue through official channels and ensure that Maya's rights are protected."
+                    ]
+                }
+
+            },
+            "info" : {
+                "text" : "The Right to Education Act (RTE) guarantees free and compulsory education for all children aged 6 to 14 years. It also prohibits discrimination in admission and sets minimum standards for schools."
+            }
+        },
+        {
+            "title" : "Education Rights3",
+            "id" : 3,
+            "points" : 10,
+            "image" : "module_education_rights/happyMaya.png",
+            "game" : {
+                "situations" : [
+                    {
+                        "text" : "A 12-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
+                        "image" : "normalMaya.png"
+                    },
+                    {
+                        "text" : "The nearest school is several kilometers away from her village, and there is no reliable transportation. Walking to school is not feasible due to the distance, especially during the rainy season when roads become impassable.",
+                        "image" : "cautiousMaya.png"
+                    },
+                    {
+                        "text" : "Maya's family struggles to make ends meet, and they cannot afford the expenses associated with sending her to school, such as school fees, uniforms, and books.",
+                        "image" : "sadMaya.png"
+                    }
+                ],
+                "test" : {
+                    "text" : "What Maya and Her Guardians Can Do :",
+                    "options" : [
+                        "Contact Local Authorities",
+                        "Confront Local Authorities",
+                        "Give Up",
+                        "Explore Legal resources"
+                    ],
+                    "correctIndex" : [0, 3],
+                    "explanations" : [
+                        "Maya's family can reach out to local education authorities or government officials to express their concerns and seek assistance. They can inquire about transportation options or subsidies to cover educational expenses for underprivileged students.",
+                        "It's important not to engage in confrontations that could escalate tensions or damage relationships. Instead, they should strive for open, respectful dialogue with local authorities and community members.",
+                        "While it can be disheartening to face barriers to education, Maya and her family should avoid giving up too easily. Persistence and determination are essential when advocating for the right to education.",
+                        "They will explore legal recourse, such as the Right to Education Act or other relevant laws, to address the issue through official channels and ensure that Maya's rights are protected."
+                    ]
+                }
+
+            },
+            "info" : {
+                "text" : "The Right to Education Act (RTE) guarantees free and compulsory education for all children aged 6 to 14 years. It also prohibits discrimination in admission and sets minimum standards for schools."
+            }
+        },
+        {
+            "title" : "Education Rights4",
+            "id" : 4,
+            "points" : 10,
+            "image" : "module_education_rights/happyMaya.png",
+            "game" : {
+                "situations" : [
+                    {
+                        "text" : "A 12-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
+                        "image" : "normalMaya.png"
+                    },
+                    {
+                        "text" : "The nearest school is several kilometers away from her village, and there is no reliable transportation. Walking to school is not feasible due to the distance, especially during the rainy season when roads become impassable.",
+                        "image" : "cautiousMaya.png"
+                    },
+                    {
+                        "text" : "Maya's family struggles to make ends meet, and they cannot afford the expenses associated with sending her to school, such as school fees, uniforms, and books.",
+                        "image" : "sadMaya.png"
+                    }
+                ],
+                "test" : {
+                    "text" : "What Maya and Her Guardians Can Do :",
+                    "options" : [
+                        "Contact Local Authorities",
+                        "Confront Local Authorities",
+                        "Give Up",
+                        "Explore Legal resources"
+                    ],
+                    "correctIndex" : [0, 3],
+                    "explanations" : [
+                        "Maya's family can reach out to local education authorities or government officials to express their concerns and seek assistance. They can inquire about transportation options or subsidies to cover educational expenses for underprivileged students.",
+                        "It's important not to engage in confrontations that could escalate tensions or damage relationships. Instead, they should strive for open, respectful dialogue with local authorities and community members.",
+                        "While it can be disheartening to face barriers to education, Maya and her family should avoid giving up too easily. Persistence and determination are essential when advocating for the right to education.",
+                        "They will explore legal recourse, such as the Right to Education Act or other relevant laws, to address the issue through official channels and ensure that Maya's rights are protected."
+                    ]
+                }
+
+            },
+            "info" : {
+                "text" : "The Right to Education Act (RTE) guarantees free and compulsory education for all children aged 6 to 14 years. It also prohibits discrimination in admission and sets minimum standards for schools."
+            }
+        },
+        {
+            "title" : "Education Rights5",
+            "id" : 5,
+            "points" : 10,
+            "image" : "module_education_rights/happyMaya.png",
+            "game" : {
+                "situations" : [
+                    {
+                        "text" : "A 12-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
+                        "image" : "normalMaya.png"
+                    },
+                    {
+                        "text" : "The nearest school is several kilometers away from her village, and there is no reliable transportation. Walking to school is not feasible due to the distance, especially during the rainy season when roads become impassable.",
+                        "image" : "cautiousMaya.png"
+                    },
+                    {
+                        "text" : "Maya's family struggles to make ends meet, and they cannot afford the expenses associated with sending her to school, such as school fees, uniforms, and books.",
+                        "image" : "sadMaya.png"
+                    }
+                ],
+                "test" : {
+                    "text" : "What Maya and Her Guardians Can Do :",
+                    "options" : [
+                        "Contact Local Authorities",
+                        "Confront Local Authorities",
+                        "Give Up",
+                        "Explore Legal resources"
+                    ],
+                    "correctIndex" : [0, 3],
+                    "explanations" : [
+                        "Maya's family can reach out to local education authorities or government officials to express their concerns and seek assistance. They can inquire about transportation options or subsidies to cover educational expenses for underprivileged students.",
+                        "It's important not to engage in confrontations that could escalate tensions or damage relationships. Instead, they should strive for open, respectful dialogue with local authorities and community members.",
+                        "While it can be disheartening to face barriers to education, Maya and her family should avoid giving up too easily. Persistence and determination are essential when advocating for the right to education.",
+                        "They will explore legal recourse, such as the Right to Education Act or other relevant laws, to address the issue through official channels and ensure that Maya's rights are protected."
+                    ]
+                }
+
+            },
+            "info" : {
+                "text" : "The Right to Education Act (RTE) guarantees free and compulsory education for all children aged 6 to 14 years. It also prohibits discrimination in admission and sets minimum standards for schools."
+            }
+        }
+    ],
+    "organisations" : {
+        
+    }
+}

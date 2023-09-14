@@ -1,0 +1,10 @@
+*{
+    transition: all 0.2s;
+}
+
+body{
+    margin: 0;
+    background-image: url('./background.jpg');
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+}
