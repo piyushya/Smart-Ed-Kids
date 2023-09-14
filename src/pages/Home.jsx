@@ -1,5 +1,6 @@
 import '../home.css'
 import modules_data from '../module_data.json'
+import tooltip_data from '../tooltip_data.json'
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react'
 
@@ -36,7 +37,7 @@ function NavButton({title, url}){
 function Nav(){
     return (
         <div className="nav_bar">
-            
+
             <img src="./nav-Bar.png"></img>
 
             <div className='nav_container'>
@@ -80,6 +81,8 @@ const modules = modules_data.modules.map((module) => {
 
 export default function Home(){
 
+    const [tooltip_desc, setTooltip_desc] = useState("");
+
     const [profile, setProfile] = useState({
         "name" : "Aryan",
         "image" : "./profile.jpg",
@@ -88,8 +91,32 @@ export default function Home(){
         "completed_modules" : []
     });
 
+    function Tooltip({title}){
+        function showDescription(){
+            if(tooltip_desc === ""){
+                setTooltip_desc(tooltip_data[title]);
+            }
+        }
+        return(
+            <>
+                {" "}<span onClick={showDescription} className='tooltip_title'>{title}</span>{" "}
+            </>
+        )
+    }
+
     return(
         <>
+            {tooltip_desc.length > 0 && 
+            <div className='tooltip_container'>
+                <div className='tooltip_wrapper'>
+                    {tooltip_desc}
+                    <button className='tooltip_close_btn' onClick={()=>{
+                        console.log("close tooltip");
+                        setTooltip_desc("");
+                    }}>close</button>
+                </div>
+            </div>}
+
             <Nav/>
             <article>
                 <h1 className='modules_heading'>
@@ -99,12 +126,25 @@ export default function Home(){
                     {modules}
                 </div>
             </article>
+
             <article>
                 <h1 className='modules_heading'>
-                    Learn about child rights organisations 🏛️
+                    Learn about <Tooltip title="Child Rights Organisations"/> 🏛️
                 </h1>
                 <div className='modules_container'>
                     {modules}
+                </div>
+            </article>
+
+            <article>
+                <h1 className='modules_heading'>
+                    Play theme mini games and learn more about the <Tooltip title="Indian Laws"/>that protect your rights
+                </h1>
+                <div className='mini_game_container'>
+                    <div className='mini_game'></div>
+                    <div className='mini_game'></div>
+                    <div className='mini_game'></div>
+                    <div className='mini_game'></div>
                 </div>
             </article>
             <Bottom/>
