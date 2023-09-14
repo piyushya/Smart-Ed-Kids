@@ -50,33 +50,6 @@ function Nav(){
     )
 }
 
-function BottomInfoContainer(){
-    return(
-        <div className='bottom_info_container'>
-            <h1>Helpline Numbers</h1>
-            <ul>
-                <li>3453453453</li>
-                <li>3453453453</li>
-                <li>3453453453</li>
-                <li>3453453453</li>
-            </ul>
-        </div>
-    )
-}
-
-function Bottom(){
-
-    return (
-        <div className="bottom_bar">
-            <footer className='foot_info'>
-                <BottomInfoContainer/>
-                <BottomInfoContainer/>
-            </footer>
-            <img src="./bottom.png"></img>
-        </div>
-    )
-}
-
 const modules = modules_data.modules.map((module) => {
     return (
         <ModuleCard 
@@ -111,6 +84,34 @@ export default function Home(){
             <>
                 {" "}<span onClick={showDescription} className='tooltip_title'>{title}</span>{" "}
             </>
+        )
+    }
+
+    function BottomInfoContainer(){
+        return(
+            <div className='bottom_info_container'>
+                <h1>Helpline Numbers</h1>
+                <ul>
+                    <li><Tooltip title={"Childline India"}/></li>
+                    <li><Tooltip title={"(NCPCR)"}/></li>
+                    <li><Tooltip title={"Childline India"}/></li>
+                    <li><Tooltip title={"Child Helpline (For Online Child Abuse)"}/></li>
+                    <li><Tooltip title={"Police Helpline (Dial 100)"}/></li>
+                    <li><Tooltip title={"Women and Child Helpline (WCD)"}/></li>
+                </ul>
+            </div>
+        )
+    }
+
+    function Bottom(){
+        return (
+            <div className="bottom_bar">
+                <footer className='foot_info'>
+                    <BottomInfoContainer/>
+                    <BottomInfoContainer/>
+                </footer>
+                <img className='bottom_kids' src="./bottom.png" alt="children"></img>
+            </div>
         )
     }
 

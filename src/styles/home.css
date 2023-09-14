@@ -136,6 +136,7 @@
     padding-left: 1rem;
     background-color: rgba(163, 13, 196, 0.719);
     display: flex;
+    position: relative;
 }
 
 .foot_info{
@@ -146,10 +147,11 @@
 }
 
 .bottom_info_container{
-    background-color: rgb(172, 170, 63);
-    border-bottom: 1rem solid rgb(71, 66, 27);
+    background-color: rgb(203, 201, 59);
+    border-bottom: 1rem solid rgb(165, 146, 0);
     padding: 1rem;
     border-radius: 0.3rem;
+    max-width: 20rem;
 }
 
 .bottom_info_container h1{
@@ -157,8 +159,11 @@
     font-size: 1.2rem;
 }
 
-.bottomBar img{
-    width: 20rem;
+.bottom_kids{
+    height: 14rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .tooltip_title{
