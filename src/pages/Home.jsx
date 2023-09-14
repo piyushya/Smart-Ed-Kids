@@ -50,17 +50,27 @@ function Nav(){
     )
 }
 
+function BottomInfoContainer(){
+    return(
+        <div className='bottom_info_container'>
+            <h1>Helpline Numbers</h1>
+            <ul>
+                <li>3453453453</li>
+                <li>3453453453</li>
+                <li>3453453453</li>
+                <li>3453453453</li>
+            </ul>
+        </div>
+    )
+}
+
 function Bottom(){
+
     return (
         <div className="bottom_bar">
             <footer className='foot_info'>
-                <p>Helpline Numbers</p>
-                <ul>
-                    <li>3453453453</li>
-                    <li>3453453453</li>
-                    <li>3453453453</li>
-                    <li>3453453453</li>
-                </ul>
+                <BottomInfoContainer/>
+                <BottomInfoContainer/>
             </footer>
             <img src="./bottom.png"></img>
         </div>
@@ -119,7 +129,7 @@ export default function Home(){
 
             <Nav/>
             <article>
-                <h1 className='modules_heading'>
+                <h1 className='modules_heading top_modules_heading'>
                     Know your rights through these fun modules 😀
                 </h1>
                 <div className='modules_container'>

@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import modules_data from '../module_data.json'
+import tooltip_data from '../tooltip_data.json'
 import { useParams } from "react-router-dom";
 import '../styles/module.css'
 
 export default function Module() {
     const {id} = useParams();
     const [score, setScore] = useState(0);
+    const [tooltip_desc, setTooltip_desc] = useState("");
     const [sceneIndex, setSceneIndex] = useState(0);
 
     const navigate = useNavigate();
@@ -67,8 +69,31 @@ export default function Module() {
         )
     }
 
+    function Tooltip({title}){
+        function showDescription(){
+            if(tooltip_desc === ""){
+                setTooltip_desc(tooltip_data[title]);
+            }
+        }
+        return(
+            <>
+                {" "}<span onClick={showDescription} className='tooltip_title'>{title}</span>{" "}
+            </>
+        )
+    }
+
     return (
         <div>
+            {tooltip_desc.length > 0 && 
+            <div className='tooltip_container'>
+                <div className='tooltip_wrapper'>
+                    {tooltip_desc}
+                    <button className='tooltip_close_btn' onClick={()=>{
+                        console.log("close tooltip");
+                        setTooltip_desc("");
+                    }}>close</button>
+                </div>
+            </div>}
             {scenes[sceneIndex]}
         </div>
     )
