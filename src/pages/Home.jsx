@@ -110,7 +110,9 @@ export default function Home(){
                     <BottomInfoContainer/>
                     <BottomInfoContainer/>
                 </footer>
-                <img className='bottom_kids' src="./bottom.png" alt="children"></img>
+                <div className='bottom_kids_img_container'>
+                    <img className="bottom_kids_img" src="./bottom.png" alt="children"></img>
+                </div>
             </div>
         )
     }
