@@ -1,0 +1,46 @@
+.module_card{
+    padding: 1rem;
+    background-color: rgb(252, 160, 0);
+    width: fit-content;
+    border-radius: 0.2rem;
+    border: 0.3rem solid rgb(255, 255, 255);
+    position: relative;
+}
+
+.module_card:hover{
+    border: 0.3rem solid rgb(73, 56, 99);
+    background-color: rgb(255, 106, 0);
+}
+
+.module_index{
+    background-color: rgb(102, 0, 244);
+    border-bottom: 0.3rem solid rgb(73, 56, 99);
+    border-radius: 0.2rem;
+    width: fit-content;
+    padding: 1rem;
+    color: white;
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+}
+
+.module_info_cont{
+    padding: 0.1rem 0.4rem;
+    text-align: center;
+}
+
+.module_name{
+    background: red;
+    color: white;
+    border-radius: 0rem;
+    width: calc(100% + 1rem);
+    transform: translateX(-1rem);
+    margin-bottom: 1rem;
+}
+
+.module_points{
+    background-color: rgb(4, 255, 41);
+    border-left: 0.4rem solid rgb(0, 184, 0);
+    border-right: 0.4rem solid rgb(0, 184, 0);
+    border-radius: 0.2rem;
+}

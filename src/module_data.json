@@ -9,17 +9,17 @@
                 "situations" : [
                     {
                         "text" : "A 12-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
-                        "backImage" : "mayaVill.jpg",
+                        "backImage" : "mayaVill.png",
                         "frontImage" : "normalMaya.png"
                     },
                     {
                         "text" : "The nearest school is several kilometers away from her village, and there is no reliable transportation. Walking to school is not feasible due to the distance, especially during the rainy season when roads become impassable.",
-                        "backImage" : "villageMap.jpg",
+                        "backImage" : "villageMap.png",
                         "frontImage" : "cautiousMaya.png"
                     },
                     {
                         "text" : "Maya's family struggles to make ends meet, and they cannot afford the expenses associated with sending her to school, such as school fees, uniforms, and books.",
-                        "backImage" : "mayaVill.jpg",
+                        "backImage" : "mayaVill.png",
                         "frontImage" : "sadMaya.png"
                     }
                 ],
@@ -53,18 +53,18 @@
             "game" : {
                 "situations" : [
                     {
-                        "text" : "A 13-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
-                        "backImage" : "mayaVill.jpg",
+                        "text" : "A 12-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
+                        "backImage" : "mayaVill.png",
                         "frontImage" : "normalMaya.png"
                     },
                     {
                         "text" : "The nearest school is several kilometers away from her village, and there is no reliable transportation. Walking to school is not feasible due to the distance, especially during the rainy season when roads become impassable.",
-                        "backImage" : "mayaVill.jpg",
+                        "backImage" : "villageMap.png",
                         "frontImage" : "cautiousMaya.png"
                     },
                     {
                         "text" : "Maya's family struggles to make ends meet, and they cannot afford the expenses associated with sending her to school, such as school fees, uniforms, and books.",
-                        "backImage" : "mayaVill.jpg",
+                        "backImage" : "mayaVill.png",
                         "frontImage" : "sadMaya.png"
                     }
                 ],
@@ -98,18 +98,18 @@
             "game" : {
                 "situations" : [
                     {
-                        "text" : "A 14-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
-                        "backImage" : "mayaVill.jpg",
+                        "text" : "A 12-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
+                        "backImage" : "mayaVill.png",
                         "frontImage" : "normalMaya.png"
                     },
                     {
                         "text" : "The nearest school is several kilometers away from her village, and there is no reliable transportation. Walking to school is not feasible due to the distance, especially during the rainy season when roads become impassable.",
-                        "backImage" : "mayaVill.jpg",
+                        "backImage" : "villageMap.png",
                         "frontImage" : "cautiousMaya.png"
                     },
                     {
                         "text" : "Maya's family struggles to make ends meet, and they cannot afford the expenses associated with sending her to school, such as school fees, uniforms, and books.",
-                        "backImage" : "mayaVill.jpg",
+                        "backImage" : "mayaVill.png",
                         "frontImage" : "sadMaya.png"
                     }
                 ],
@@ -143,18 +143,18 @@
             "game" : {
                 "situations" : [
                     {
-                        "text" : "A 15-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
-                        "backImage" : "mayaVill.jpg",
+                        "text" : "A 12-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
+                        "backImage" : "mayaVill.png",
                         "frontImage" : "normalMaya.png"
                     },
                     {
                         "text" : "The nearest school is several kilometers away from her village, and there is no reliable transportation. Walking to school is not feasible due to the distance, especially during the rainy season when roads become impassable.",
-                        "backImage" : "mayaVill.jpg",
+                        "backImage" : "villageMap.png",
                         "frontImage" : "cautiousMaya.png"
                     },
                     {
                         "text" : "Maya's family struggles to make ends meet, and they cannot afford the expenses associated with sending her to school, such as school fees, uniforms, and books.",
-                        "backImage" : "mayaVill.jpg",
+                        "backImage" : "mayaVill.png",
                         "frontImage" : "sadMaya.png"
                     }
                 ],

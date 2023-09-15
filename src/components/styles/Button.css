@@ -1,0 +1,87 @@
+/* Default Button */
+
+.button{
+    background-color: rgb(0, 110, 255);
+    border-bottom: 0.5rem solid rgb(25, 62, 182);
+    border: 0;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+.button:hover{
+    background-color: rgb(73, 32, 131);
+}
+
+.button:disabled{
+    background-color: rgb(69, 81, 95);
+    color: rgb(48, 53, 61);
+    border-bottom: 0.4rem solid rgb(50, 58, 63);
+}
+
+.button:disabled:hover{
+    background-color: rgb(69, 81, 95);
+}
+
+/* Button Styles 
+ (red) (green) (blue) (yellow)
+*/
+
+.button_blue{
+    background-color: rgb(0, 34, 255);
+    border-bottom: 0.5rem solid rgb(19, 23, 154);
+}
+.button_blue:hover{
+    background-color: rgb(8, 50, 187);
+}
+
+.button_red{
+    background-color: rgb(255, 0, 72);
+    border-bottom: 0.5rem solid rgb(169, 19, 19);
+}
+.button_red:hover{
+    background-color: rgb(206, 19, 19);
+}
+
+.button_green{
+    background-color: rgb(38, 174, 7);
+    border-bottom: 0.5rem solid rgb(32, 108, 12);
+}
+.button_green:hover{
+    background-color: rgb(42, 148, 15);
+}
+
+.button_yellow{
+    background-color: rgb(255, 208, 0);
+    border-bottom: 0.5rem solid rgb(169, 146, 17);
+}
+.button_yellow:hover{
+    background-color: rgb(217, 187, 17);
+}
+
+/* Button Types
+ (module_nav_button) (home_nav_button) (option_button)
+*/
+
+.module_nav_button{
+    margin-top: 0.5rem;
+}
+
+.option_button{
+    border: 0rem;
+    background-color: rgb(252, 191, 111);
+    font-size: 1rem;
+    border-radius: 0.2rem;
+    border-bottom: 0.5rem solid rgb(134, 84, 34);
+    padding: 0.5rem;
+    width: 70%;
+    cursor: pointer;
+    margin: 0;
+}
+
+.option_button:hover{
+    background-color: rgb(212, 143, 53);
+}

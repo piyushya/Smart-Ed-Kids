@@ -2,12 +2,17 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import modules_data from '../module_data.json'
 import { useParams } from "react-router-dom";
-import '../styles/module.css'
+import './styles/module.css'
+import Button from '../components/Button'
 
 export default function Module() {
     const {id} = useParams();
     const [score, setScore] = useState(0);
     const [sceneIndex, setSceneIndex] = useState(0);
+    const [correctSelectIndex, setCorrectSelectIndex] = useState([]);
+    const [OptDescVisible, setOptDescVisible] = useState(false);
+    const [OptClickIndex, setOptClickIndex] = useState(0);
+    const [playing, setPlaying] = useState(true);
 
     const navigate = useNavigate();
 
@@ -24,11 +29,32 @@ export default function Module() {
     const test = module.game.test;
     const options = test.options.map((option, index) => {
         return (
-            <button className='option_button' key={index}>
-                {option}
-            </button>
+            <Button
+                key={index}
+                title={option}
+                type={"option_button"}
+                style="yellow"
+                handleClick={() => {
+                    handle_option_click(index);
+                    setOptDescVisible(true);
+                }}
+            />
         )
     });
+
+    // handle score changes and show description based on the option the user chooses
+    function handle_option_click(index){
+        setOptClickIndex(index);
+        if((correctSelectIndex.length < test.correctIndex.length) && !correctSelectIndex.includes(index)){
+            if(test.correctIndex.includes(index)){
+                setScore((prev) => (prev+5));
+                setCorrectSelectIndex((prev) => ([...prev, index]));
+            }
+            else{
+                setScore((prev) => (prev-1));
+            }
+        }
+    }
 
     function nextScene(){
         setSceneIndex((sceneIndex + 1) % scenes.length);
@@ -57,20 +83,82 @@ export default function Module() {
                 <div className='scene_info'>
                     <p className='scene_text'>{scene.text}</p>
                     <div className='nav_btn_container'>
-                        <button disabled={!(sceneIndex > 0)} className="prev_button module_nav_button" onClick = {prevScene}>⏮️</button>
-                        <button disabled={!(sceneIndex < (scenes.length-1))} className="next_button module_nav_button" onClick = {nextScene}>⏭️</button>
+                        <Button
+                            title="⏮️"
+                            type="module_nav_button"
+                            handleClick={prevScene}
+                            style="red"
+                            disabled={!(sceneIndex > 0)}
+                        />
+                        <Button
+                            title="⏭️"
+                            type="module_nav_button"
+                            handleClick={nextScene}
+                            style="green"
+                            disabled={!(sceneIndex < (scenes.length-1))} 
+                        />
                     </div>
                 </div>
-                <button className="home_button module_nav_button" onClick = {() => {
-                    navigate('/');
-                }}>🏠</button>
+                <div className='home_button_container'>
+                    <Button
+                        title="🏠"
+                        type="module_nav"
+                        handleClick={() => {
+                            navigate('/home');
+                        }}
+                        style="blue"
+                    />
+                </div>
                 {sceneIndex === (scenes.length-1) && <TestContainer/>}
+            </div>
+        )
+    }
+
+    function OptionDescription({index, playing}){
+        const isCorrect = test.correctIndex.includes(index);
+        const statusClass = isCorrect ? "answer_correct" : "answer_wrong";
+        return(
+            <div className={'option_description'}>
+                {playing && 
+                    <div className={`score_change_indicator ${isCorrect?'score_change_indicator_pos':'score_change_indicator_neg'}`}>
+                        {isCorrect ? "+5" : "-1"}
+                    </div>
+                }           
+                <div className={`answer_status ${statusClass}`}>
+                    {((isCorrect) ? 
+                        "Thats Awesome" : "You deserve to die kid")
+                    }
+                </div>
+                {playing && <div className='score_container'>
+                    {"score : "} {score}
+                </div>}
+                <div className='option_explanation'>
+                    {test.explanations[index]}
+                </div>
+                <Button 
+                    handleClick = {() => {
+                        setOptDescVisible(false)
+                        // check if user has answered all the correct questions
+                        if(correctSelectIndex.length === test.correctIndex.length){
+                            setPlaying(false);
+                        }
+                    }}
+                    title="close"
+                    style="red"
+                />
             </div>
         )
     }
 
     return (
         <div>
+            {OptDescVisible && 
+            <div className='option_desc_shadow'>
+                <OptionDescription 
+                    index={OptClickIndex}
+                    playing={playing}
+                />
+            </div>}
             {scenes[sceneIndex]}
         </div>
     )

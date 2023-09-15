@@ -1,4 +1,5 @@
 import './styles/App.css'
+import Login from './pages/Login'
 import Home from './pages/Home'
 import Module from './pages/Module'
 import { BrowserRouter as Router, Route, Routes, useParams } from "react-router-dom";
@@ -9,7 +10,8 @@ function App() {
     <div className="app">
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<Login />} />
+          <Route exact path="/home" element={<Home />} />
           <Route exact path={'/module/:id'} element={<Module/>} />
         </Routes>
       </Router>

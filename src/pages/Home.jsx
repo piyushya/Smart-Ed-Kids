@@ -1,50 +1,52 @@
-import '../styles/home.css'
+import './styles/home.css'
 import modules_data from '../module_data.json'
 import tooltip_data from '../tooltip_data.json'
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react'
+import Button from '../components/Button'
+import ModuleCard from '../components/ModuleCard';
 
-function ModuleCard({name, id, image, points}){
-    const navigate = useNavigate();
-
-    function showModule(name){
-        console.log("routing functionality for" + name);
-        navigate(`/module/${id}`);
-    }
-
-    return(
-        <div onClick={() => {showModule(name)}} className='module_card'>
-            <div className='module_index'>
-                {id}
-            </div>
-            <img src={`${window.location.origin}/module_education_rights/`+image} alt="image"></img>
-            <div className='module_name module_info_cont'>{name}</div>
-            <div className='module_points module_info_cont'>{points} {" Points"}</div>
-        </div>
-    )
-}
-
-function NavButton({title, url}){
-    return(
-        <button className={`nav_button_${title.split(" ")[0]} nav_button`} onClick={() => {
-            // navigate to url
-        }}>
-            {title}
-        </button>
-    )
+function handle_nav_button_click(url){
+    console.log("clicked")
 }
 
 function Nav(){
     return (
         <div className="nav_bar">
-
             <img src="./nav-Bar.png"></img>
-
             <div className='nav_container'>
-                <NavButton title="profile 😀" url = "#"/>
-                <NavButton title="language ⚙️" url = "#"/>
-                <NavButton title="leaderboard 📜" url = "#"/>
-                <NavButton title="get-help 🆘" url = "#"/>
+                <Button 
+                    title="profile 😀" 
+                    type="home_nav_button" 
+                    handleClick = {() => {
+                        handle_nav_button_click("#");
+                    }}
+                    style="blue"
+                />
+                <Button 
+                    title="language ⚙️" 
+                    type="home_nav_button" 
+                    handleClick = {() => {
+                        handle_nav_button_click("#");
+                    }}
+                    style="red"
+                />
+                <Button 
+                    title="leaderboard 📜" 
+                    type="home_nav_button" 
+                    handleClick = {() => {
+                        handle_nav_button_click("#");
+                    }}
+                    style="green"
+                />
+                <Button 
+                    title="get-help 🆘" 
+                    type="home_nav_button" 
+                    handleClick = {() => {
+                        handle_nav_button_click("#");
+                    }}
+                    style="yellow"
+                />
             </div>
         </div>
     )
