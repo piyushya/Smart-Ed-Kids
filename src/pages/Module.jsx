@@ -10,6 +10,7 @@ export default function Module() {
     const [score, setScore] = useState(0);
     const [sceneIndex, setSceneIndex] = useState(0);
     const [correctSelectIndex, setCorrectSelectIndex] = useState([]);
+    const [allSelectIndex, setAllSelectIndex] = useState([]);
     const [OptDescVisible, setOptDescVisible] = useState(false);
     const [OptClickIndex, setOptClickIndex] = useState(0);
     const [playing, setPlaying] = useState(true);
@@ -45,7 +46,7 @@ export default function Module() {
     // handle score changes and show description based on the option the user chooses
     function handle_option_click(index){
         setOptClickIndex(index);
-        if((correctSelectIndex.length < test.correctIndex.length) && !correctSelectIndex.includes(index)){
+        if((correctSelectIndex.length < test.correctIndex.length) && !allSelectIndex.includes(index)){
             if(test.correctIndex.includes(index)){
                 setScore((prev) => (prev+5));
                 setCorrectSelectIndex((prev) => ([...prev, index]));
@@ -53,6 +54,7 @@ export default function Module() {
             else{
                 setScore((prev) => (prev-1));
             }
+            setAllSelectIndex((prev) => ([...prev, index]));
         }
     }
 
@@ -80,7 +82,7 @@ export default function Module() {
             <div className='scene_view'>
                 <img className="scene_backImage" src={`${window.location.origin}/module_education_rights/`+ scene.backImage}></img>
                 <img className="scene_frontImage" src={`${window.location.origin}/module_education_rights/`+ scene.frontImage}></img>
-                <div className='scene_info'>
+                {sceneIndex < (scenes.length-1) && <div className='scene_info'>
                     <p className='scene_text'>{scene.text}</p>
                     <div className='nav_btn_container'>
                         <Button
@@ -98,7 +100,7 @@ export default function Module() {
                             disabled={!(sceneIndex < (scenes.length-1))} 
                         />
                     </div>
-                </div>
+                </div>}
                 <div className='home_button_container'>
                     <Button
                         title="🏠"

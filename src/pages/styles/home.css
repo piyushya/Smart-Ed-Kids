@@ -34,19 +34,10 @@
     flex-wrap: wrap;
 }
 
-.mini_game_container{
+.godot_game_container{
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.mini_game{
-    background-color: aquamarine;
-    width: 5rem;
-    height: 5rem;
-    border-radius: 100rem;
-    background-image: url('./module_education_rights/normalMaya.png');
+    flex-direction: column;
+    align-items: center;
 }
 
 .bottom_bar{

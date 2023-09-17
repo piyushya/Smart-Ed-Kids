@@ -67,6 +67,7 @@ const modules = modules_data.modules.map((module) => {
 export default function Home(){
 
     const [tooltip_desc, setTooltip_desc] = useState("");
+    const [viewGame, setViewGame] = useState(false);
 
     const [profile, setProfile] = useState({
         "name" : "Aryan",
@@ -153,13 +154,27 @@ export default function Home(){
 
             <article>
                 <h1 className='modules_heading'>
-                    Play these mini games and learn more about the <Tooltip title="Indian Laws"/>that protect your rights
+                    Play this mini game and learn more about the <Tooltip title="Indian Laws"/>that protect your rights
                 </h1>
-                <div className='mini_game_container'>
-                    <div className='mini_game'></div>
-                    <div className='mini_game'></div>
-                    <div className='mini_game'></div>
-                    <div className='mini_game'></div>
+                <div className='godot_game_container'>
+                    {!viewGame && <Button 
+                        handleClick={() => (setViewGame(true))}
+                        title = "Play Now"
+                        style="blue"
+                    />}
+                    {viewGame && <iframe
+                        src="https://itch.io/embed-upload/8710761?color=333333" 
+                        width={640} 
+                        height={380}>
+                        <a href="https://piyushya.itch.io/child-rights-3d">
+                            Play child rights 3d on itch.io
+                        </a>
+                    </iframe>}
+                    {viewGame && <Button 
+                        handleClick={() => (setViewGame(false))}
+                        title = "Close Game"
+                        style="red"
+                    />}
                 </div>
             </article>
             <Bottom/>
