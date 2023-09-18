@@ -68,6 +68,14 @@ export default function Home(){
 
     const [tooltip_desc, setTooltip_desc] = useState("");
     const [viewGame, setViewGame] = useState(false);
+    const [viewGameIndex, setViewGameIndex] = useState(0);
+
+    const gameSrcs = [
+        "https://itch.io/embed-upload/8710761?color=333333",
+        "https://itch.io/embed-upload/8710761?color=333333",
+        "https://itch.io/embed-upload/8710761?color=333333",
+        "https://itch.io/embed-upload/8710761?color=333333"
+    ]
 
     const [profile, setProfile] = useState({
         "name" : "Aryan",
@@ -120,6 +128,11 @@ export default function Home(){
         )
     }
 
+    function showGame(index){
+        setViewGame(true);
+        setViewGameIndex(index);
+    }
+
     return(
         <>
             {tooltip_desc.length > 0 && 
@@ -154,9 +167,42 @@ export default function Home(){
 
             <article>
                 <h1 className='modules_heading'>
-                    Play this mini game and learn more about the <Tooltip title="Indian Laws"/>that protect your rights
+                    Play these mini game and learn more about the <Tooltip title="Indian Laws"/>that protect your rights
                 </h1>
-                <div className='godot_game_container'>
+                <div className='games_container'>
+                    <div className='games_intro'>
+                        <div className='game_card' onClick={() => {showGame(0)}}>
+                            <img src='./games/gameCard1.jpg'></img>
+                            <div className='game_card_info'>
+                                <h1>Rights Land</h1>
+                                <p>Defeat the monsters in Rights land and save the children rights</p>
+                            </div>
+                        </div>
+                        <div className='game_card' onClick={() => {showGame(1)}}>
+                            <img src='./games/gameCard1.jpg'></img>
+                            <div className='game_card_info'>
+                                <h1>Rights Land</h1>
+                                <p>Defeat the monsters in Rights land and save the children rights</p>
+                            </div>
+                        </div>
+                        <div className='game_card' onClick={() => {showGame(2)}}>
+                            <img src='./games/gameCard1.jpg'></img>
+                            <div className='game_card_info'>
+                                <h1>Rights Land</h1>
+                                <p>Defeat the monsters in Rights land and save the children rights</p>
+                            </div>
+                        </div>
+                        <div className='game_card' onClick={() => {showGame(3)}}>
+                            <img src='./games/gameCard1.jpg'></img>
+                            <div className='game_card_info'>
+                                <h1>Rights Land</h1>
+                                <p>Defeat the monsters in Rights land and save the children rights</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                {/* <div className='godot_game_container'>
                     {!viewGame && <Button 
                         handleClick={() => (setViewGame(true))}
                         title = "Play Now"
@@ -176,8 +222,32 @@ export default function Home(){
                         style="red"
                     />}
                 </div>
+                <div className='godot_game_container'> */}
+                {/* <iframe
+                    src="https://itch.io/embed/2267718"
+                    width={552}
+                    height={167}
+                >
+                    <a href="https://piyushya.itch.io/child-rights-3d">child rights 3d by
+                    piyushya</a>
+                </iframe> */}
             </article>
             <Bottom/>
+            {viewGame && <div className='gameView'>
+                <iframe
+                    src={gameSrcs[viewGameIndex]}
+                    width={640} 
+                    height={380}>
+                    <a href="https://piyushya.itch.io/child-rights-3d">
+                        Play child rights 3d on itch.io
+                    </a>
+                </iframe>
+                <Button 
+                    handleClick={() => (setViewGame(false))}
+                    title = "Close Game"
+                    style="red"
+                />
+            </div>}
         </>
     )
 }

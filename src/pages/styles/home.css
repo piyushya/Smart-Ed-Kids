@@ -34,10 +34,73 @@
     flex-wrap: wrap;
 }
 
-.godot_game_container{
+.games_container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: ;
+}
+
+.gameView{
+    background-color: rgba(0, 0, 0, 0.884);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    padding-top: 5rem;
+    top: 0;
+    left: 0;
+}
+
+.games_intro{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 60rem;
+    flex-wrap: wrap;
+}
+
+.game_card{
+    width: 24rem;
+    height: 11rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.5rem;
+    border: 0.3rem solid rgb(20, 69, 22);
+    cursor: pointer;
+}
+
+.game_card:hover{
+    border: 0.3rem solid rgb(34, 215, 18);
+}
+
+.game_card_info{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: aliceblue;
+    width: 100%;
+}
+
+.game_card_info h1{
+    padding-left: 1rem;
+}
+
+.game_card_info p{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.game_card img{
+    position: absolute;
+    width: 105%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: brightness(0.5);
 }
 
 .bottom_bar{
