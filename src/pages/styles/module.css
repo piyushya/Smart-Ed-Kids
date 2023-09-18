@@ -84,6 +84,8 @@
 .option_button{
     border: 0rem;
     background-color: rgb(252, 191, 111);
+    color: rgb(46, 33, 22);
+    font-weight: bold;
     font-size: 1rem;
     border-radius: 0.2rem;
     border-bottom: 0.5rem solid rgb(134, 84, 34);
@@ -108,11 +110,12 @@
 }
 
 .option_description{
-    background-color: rgb(34, 11, 92);
+    background-color: rgb(31, 46, 147);
     padding: 2rem;
-    color: rgb(176, 164, 197);
+    color: rgb(255, 255, 255);
     max-width: 50vw;
     position: relative;
+    border-radius: 1rem;
 }
 
 .score_change_indicator{
@@ -122,26 +125,25 @@
     transform: translate(-50%, -50%);
     padding : 1rem;
     font-size: 2rem;
-    border-radius: 10rem;
+    border-radius: 1rem;
 }
 
 .score_change_indicator_pos{
-    background-color: rgb(20, 108, 20);
-    border: 0.5rem solid rgb(14, 73, 14);
+    background-color: rgb(9, 139, 9);
 }
 
 .score_change_indicator_neg{
-    background-color: rgb(174, 32, 32);
-    border: 0.5rem solid rgb(123, 21, 21);
+    background-color: rgb(255, 0, 0);
 }
 
 .answer_status{
     text-align: center;
     padding: 1rem;
+    border-radius: 1rem 1rem 0rem 0rem;
 }
 
 .answer_correct{
-    background-color: rgb(20, 108, 20);
+    background-color: rgb(4, 158, 4);
 }
 
 .answer_wrong{
@@ -152,6 +154,7 @@
     background-color: rgb(36, 16, 63);
     padding: 1rem;
     font-size: 1.5rem;
+    border-radius: 0rem 0rem 1rem 1rem;
 }
 
 .option_explanation{

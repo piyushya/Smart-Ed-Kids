@@ -1,0 +1,30 @@
+.login_form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login_form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.769);
+    padding: 3rem;
+    border-radius: 0.5rem;
+}
+
+.login_username{
+    height: 3rem;
+    border: 0rem;
+    text-align: center;
+    background-color: antiquewhite;
+    border-radius: 0.4rem;
+    
+}
+
+.age_group_label{
+    color: white;
+}

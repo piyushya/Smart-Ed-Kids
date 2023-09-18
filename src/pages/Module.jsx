@@ -128,7 +128,7 @@ export default function Module() {
                 }           
                 <div className={`answer_status ${statusClass}`}>
                     {((isCorrect) ? 
-                        "Thats Awesome" : "You deserve to die kid")
+                        "That is correct" : "That is not right")
                     }
                 </div>
                 {playing && <div className='score_container'>

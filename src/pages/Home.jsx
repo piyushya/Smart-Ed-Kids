@@ -65,6 +65,32 @@ const modules = modules_data.modules.map((module) => {
     )
 })
 
+const organisations = modules_data.organisations.map((module) => {
+    return (
+        <ModuleCard 
+            key = {module.id} 
+            name = {module.title}
+            id = {module.id}
+            frontImage = {module.game.situations[0].frontImage}
+            backImage = {module.game.situations[0].backImage}
+            points = {module.points}
+        />
+    )
+})
+
+const laws = modules_data.laws.map((module) => {
+    return (
+        <ModuleCard 
+            key = {module.id} 
+            name = {module.title}
+            id = {module.id}
+            frontImage = {module.game.situations[0].frontImage}
+            backImage = {module.game.situations[0].backImage}
+            points = {module.points}
+        />
+    )
+})
+
 export default function Home(){
 
     const [tooltip_desc, setTooltip_desc] = useState("");
@@ -73,9 +99,16 @@ export default function Home(){
 
     const gameSrcs = [
         "https://itch.io/embed-upload/8710761?color=333333",
-        "https://itch.io/embed-upload/8710761?color=333333",
+        "https://itch.io/embed/2263529",
         "https://itch.io/embed-upload/8710761?color=333333",
         "https://itch.io/embed-upload/8710761?color=333333"
+    ]
+
+    const gameHrefs = [
+        "https://piyushya.itch.io/child-rights-3d",
+        "https://skul1cru5h3r.itch.io/proto",
+        "https://piyushya.itch.io/child-rights-3d",
+        "https://piyushya.itch.io/child-rights-3d"
     ]
 
     const [profile, setProfile] = useState({
@@ -99,7 +132,7 @@ export default function Home(){
         )
     }
 
-    function BottomInfoContainer(){
+    function BottomInfoContainer1(){
         return(
             <div className='bottom_info_container'>
                 <h1>Helpline Numbers</h1>
@@ -115,12 +148,29 @@ export default function Home(){
         )
     }
 
+    function BottomInfoContainer2(){
+        return(
+            <div className='bottom_info_container'>
+                <h1>Child Rights Organisations</h1>
+                <ul>
+                    <li><Tooltip title={"National Commission for Protection of Child Rights (NCPCR)"}/></li>
+                    <li><Tooltip title={"Save the Children"}/></li>
+                    <li><Tooltip title={"Child Rights and You (CRY)"}/></li>
+                    <li><Tooltip title={"Pratham"}/></li>
+                    <li><Tooltip title={"Mobile Creches"}/></li>
+                    <li><Tooltip title={"Butterflies India"}/></li>
+                    <li><Tooltip title={"Bal Vikas Dhara (BVD)"}/></li>
+                </ul>
+            </div>
+        )
+    }
+
     function Bottom(){
         return (
             <div className="bottom_bar">
                 <footer className='foot_info'>
-                    <BottomInfoContainer/>
-                    <BottomInfoContainer/>
+                    <BottomInfoContainer1/>
+                    <BottomInfoContainer2/>
                 </footer>
                 <div className='bottom_kids_img_container'>
                     <img className="bottom_kids_img" src="./bottom.png" alt="children"></img>
@@ -162,13 +212,22 @@ export default function Home(){
                     Learn about <Tooltip title="Child Rights Organisations"/> 🏛️
                 </h1>
                 <div className='modules_container'>
-                    {modules}
+                    {organisations}
                 </div>
             </article>
 
             <article>
                 <h1 className='modules_heading'>
-                    Play these mini game and learn more about the <Tooltip title="Indian Laws"/>that protect your rights
+                    Learn about <Tooltip title="Indian Laws"/> that protect your rights
+                </h1>
+                <div className='modules_container'>
+                    {laws}
+                </div>
+            </article>
+
+            <article>
+                <h1 className='modules_heading'>
+                    Play these interactive games and boost your learning
                 </h1>
                 <div className='games_container'>
                     <div className='games_intro'>
@@ -182,56 +241,26 @@ export default function Home(){
                         <div className='game_card' onClick={() => {showGame(1)}}>
                             <img src='./games/gameCard1.jpg'></img>
                             <div className='game_card_info'>
-                                <h1>Rights Land</h1>
-                                <p>Defeat the monsters in Rights land and save the children rights</p>
+                                <h1>Equality Quest</h1>
+                                <p>Join a group of young adventurers on a quest to explore the world of equality and fairness.</p>
                             </div>
                         </div>
                         <div className='game_card' onClick={() => {showGame(2)}}>
                             <img src='./games/gameCard1.jpg'></img>
                             <div className='game_card_info'>
-                                <h1>Rights Land</h1>
-                                <p>Defeat the monsters in Rights land and save the children rights</p>
+                                <h1>Rights Defenders</h1>
+                                <p>In this action-packed role-playing game, you become child rights superhero.</p>
                             </div>
                         </div>
                         <div className='game_card' onClick={() => {showGame(3)}}>
                             <img src='./games/gameCard1.jpg'></img>
                             <div className='game_card_info'>
-                                <h1>Rights Land</h1>
-                                <p>Defeat the monsters in Rights land and save the children rights</p>
+                                <h1>Righteous Puzzlers</h1>
+                                <p>This jigsaw puzzle game helps children piece together the puzzle of child rights</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                {/* <div className='godot_game_container'>
-                    {!viewGame && <Button 
-                        handleClick={() => (setViewGame(true))}
-                        title = "Play Now"
-                        style="blue"
-                    />}
-                    {viewGame && <iframe
-                        src="https://itch.io/embed-upload/8710761?color=333333" 
-                        width={640} 
-                        height={380}>
-                        <a href="https://piyushya.itch.io/child-rights-3d">
-                            Play child rights 3d on itch.io
-                        </a>
-                    </iframe>}
-                    {viewGame && <Button 
-                        handleClick={() => (setViewGame(false))}
-                        title = "Close Game"
-                        style="red"
-                    />}
-                </div>
-                <div className='godot_game_container'> */}
-                {/* <iframe
-                    src="https://itch.io/embed/2267718"
-                    width={552}
-                    height={167}
-                >
-                    <a href="https://piyushya.itch.io/child-rights-3d">child rights 3d by
-                    piyushya</a>
-                </iframe> */}
             </article>
             <Bottom/>
             {viewGame && <div className='gameView'>
@@ -239,7 +268,7 @@ export default function Home(){
                     src={gameSrcs[viewGameIndex]}
                     width={640} 
                     height={380}>
-                    <a href="https://piyushya.itch.io/child-rights-3d">
+                    <a href={gameHrefs[viewGameIndex]}>
                         Play child rights 3d on itch.io
                     </a>
                 </iframe>
