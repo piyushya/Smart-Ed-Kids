@@ -73,7 +73,21 @@
 }
 
 .game_card:hover{
-    border: 0.3rem solid rgb(34, 215, 18);
+    border: 0.3rem solid rgb(27, 37, 26);
+}
+
+.game_card img{
+    position: absolute;
+    width: 105%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: brightness(0.5);
+}
+
+.game_card:hover img{
+    filter: brightness(0.4);
+    width: 110%;
 }
 
 .game_card_info{
@@ -92,15 +106,6 @@
 .game_card_info p{
     padding-left: 1rem;
     padding-right: 1rem;
-}
-
-.game_card img{
-    position: absolute;
-    width: 105%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    filter: brightness(0.5);
 }
 
 .bottom_bar{

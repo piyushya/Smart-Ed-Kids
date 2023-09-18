@@ -58,7 +58,8 @@ const modules = modules_data.modules.map((module) => {
             key = {module.id} 
             name = {module.title}
             id = {module.id}
-            image = {module.image}
+            frontImage = {module.game.situations[0].frontImage}
+            backImage = {module.game.situations[0].backImage}
             points = {module.points}
         />
     )
