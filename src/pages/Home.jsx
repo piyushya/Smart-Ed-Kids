@@ -260,9 +260,9 @@ export default function Home(){
                             </div>
                         </div>
                     </div>
-                    <div className='external_game'>
+                    {/* <div className='external_game'>
                         <iframe width="552" height="167" src="https://itch.io/embed/2263529"><a href="https://skul1cru5h3r.itch.io/proto">Proto by SKUL1CRU5H3R</a></iframe>
-                    </div>
+                    </div> */}
                 </div>
             </article>
             <Bottom/>
