@@ -47,6 +47,7 @@ function Nav(){
                     }}
                     style="yellow"
                 />
+
             </div>
         </div>
     )
@@ -186,6 +187,9 @@ export default function Home(){
 
     return(
         <>
+            <div className='site_logo_container'>
+                <img className='site_logo' src='./site_logo.png'/>
+            </div>
             {tooltip_desc.length > 0 && 
             <div className='tooltip_container'>
                 <div className='tooltip_wrapper'>

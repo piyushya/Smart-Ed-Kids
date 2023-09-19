@@ -4,15 +4,31 @@
     overflow: hidden; 
 }
 
-.nav_bar img{
-    margin-top: -10rem;
-}
-
 .nav_container{
     position: absolute;
     right: 0;
     top: 0;
     padding: 1rem;
+}
+
+.site_logo_container{
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.516);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+.site_logo{
+    width: 15rem;
+}
+
+.nav_bar img{
+    margin-top: -10rem;
 }
 
 .modules_heading{
@@ -204,5 +220,8 @@
         overflow-x: scroll;
         flex-wrap: nowrap;
         justify-content:start;
+    }
+    .nav_container{
+        position: relative;
     }
 }
