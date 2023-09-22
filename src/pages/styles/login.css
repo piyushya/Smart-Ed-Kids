@@ -2,8 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    gap: 0.5rem;
+    /* background-color: rgba(25, 77, 15, 0.769); */
+    background-size: cover;
+    width: 80%;
+    max-width: 40rem ;
+    margin: 1rem auto;
+    padding: 2rem 1rem;
+    border-radius: 1rem;
 }
 
 .login_form{
@@ -11,20 +17,92 @@
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.769);
-    padding: 3rem;
-    border-radius: 0.5rem;
+    justify-content: center;
+    width: fit-content;
+}
+
+.avatar_display{
+    width: 30%;
+}
+
+.avatar_display img{
+    transform: translate(0, 4rem);
+}
+
+.avatar_select_container{
+    display: flex;
+    align-items: center;
+}
+
+.avatar_container{
+    display: flex;
+    height: 7rem;
+    width: 7rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+    border: 0.5rem solid rgba(29, 29, 89, 0.728);
+}
+
+.avatar_container img{
+    position: absolute;
+    width: 7rem;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.next_avatar{
+    transform: translate(-50%, 0);
+}
+
+.prev_avatar{
+    transform: translate(50%, 0);
+    z-index: 2;
+}
+
+.next_avatar img, .prev_avatar img{
+    width: 3rem;
+    cursor: pointer;
+}
+
+.next_avatar img:hover, .prev_avatar img:hover{
+    filter: brightness(0.5);
+}
+
+.login_data{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .login_username{
     height: 3rem;
     border: 0rem;
     text-align: center;
-    background-color: antiquewhite;
+    background-color: rgb(255, 85, 0);
     border-radius: 0.4rem;
-    
+    color: white;
+}
+
+.login_username::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 1; /* Firefox */
+}
+  
+.login_username::-ms-input-placeholder { /* Edge 12 -18 */
+    color: rgb(255, 255, 255);
 }
 
 .age_group_label{
-    color: white;
+    color: rgb(21, 49, 14);
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .avatar_display{
+        display: none;
+    }
 }

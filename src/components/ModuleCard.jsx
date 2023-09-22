@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import './styles/ModuleCard.css'
+// import './styles/ModuleCard.css'
 
 export default function ModuleCard({name, id, frontImage,backImage, points}){
     const navigate = useNavigate();

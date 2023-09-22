@@ -202,7 +202,7 @@ export default function Home(){
             </div>}
 
             <Nav/>
-            <article>
+            {/* <article>
                 <h1 className='modules_heading top_modules_heading'>
                     Know your rights through these fun modules 😀
                 </h1>
@@ -227,7 +227,7 @@ export default function Home(){
                 <div className='modules_container'>
                     {laws}
                 </div>
-            </article>
+            </article> */}
 
             <article>
                 <h1 className='modules_heading'>

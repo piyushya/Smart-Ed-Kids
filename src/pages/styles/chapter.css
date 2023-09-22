@@ -1,0 +1,141 @@
+.map_container{
+    width: 100vw;
+    max-width: 50rem;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(33, 197, 85);
+    align-items: center;
+    padding-top: 10rem;
+    margin: 0 auto;
+    box-shadow: rgb(2, 107, 4) 0px 1rem 2rem;
+}
+
+.t{
+    position: relative;
+}
+
+.t1{
+    border-top: 1rem dashed rgb(49, 0, 128);
+    border-right: 1rem solid rgb(49, 0, 128);
+    border-top-right-radius: 5rem;
+    height: 30vh;
+    width: 60%;
+}
+
+.t2{
+    border-top: 1rem dashed rgb(49, 0, 128);
+    border-left: 1rem solid rgb(49, 0, 128);
+    border-top-left-radius: 5rem;
+    height: 30vh;
+    width: 60%;
+}
+.t3{
+    border-top: 1rem solid rgb(94, 126, 94);
+    border-right: 1rem solid rgb(94, 126, 94);
+    border-top-right-radius: 5rem;
+    height: 30vh;
+    width: 60%;
+}
+.t4{
+    border-top: 1rem solid rgb(94, 126, 94);
+    border-left: 1rem solid rgb(94, 126, 94);
+    border-top-left-radius: 5rem;
+    height: 30vh;
+    width: 60%;
+}
+.t5{
+    border-top: 1rem solid rgb(94, 126, 94);
+    border-right: 1rem solid rgb(94, 126, 94);
+    border-top-right-radius: 5rem;
+    height: 30vh;
+    width: 60%;
+}
+
+.m{
+    position: absolute;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100rem;
+    background-size : cover;
+    border : 0.5rem solid rgba(0, 0, 0, 0.527);
+}
+
+.star{
+    position: absolute;
+    width: 4rem;
+    top: 0;
+    left: 0;
+    transform: translate(-20%, -20%);
+}
+
+.module_type{
+    position: absolute;
+    width: 4rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.moduleName{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: rgba(0, 0, 0, 0.578);
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.5rem;
+}
+
+.m1{
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+}
+
+.m2{
+    transform: translate(40%, -50%);
+    top: 0;
+    right: 0;
+}
+
+.m3{
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+}
+
+.m4{
+    transform: translate(50%, -50%);
+    top: 0;
+    right: 0;
+}
+
+.m5{
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+}
+
+.complete{
+    background-color: green;
+}
+
+.pending{
+    background-color: blue;
+}
+
+.disabled{
+    background-color: #cca92c;
+}
+
+@media only screen and (max-width: 768px) {
+    .t{
+        width: 50%;
+    }
+}

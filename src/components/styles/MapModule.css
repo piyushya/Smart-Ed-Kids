@@ -1,0 +1,112 @@
+:root{
+    --module_complete_color : rgb(115, 0, 255);
+    --module_disabled_color : rgb(92, 83, 86);
+}
+
+.module_path{
+    position: relative;
+    height: 30vh;
+    width: 50%;
+    border: 0rem;
+    border-top: 1rem dashed var(--module_disabled_color);
+}
+
+.module_path_right{
+    border-right: 1rem solid var(--module_disabled_color);
+    border-top-right-radius: 5rem;
+}
+
+.module_path_left{
+    border-left: 1rem solid var(--module_disabled_color);
+    border-top-left-radius: 5rem;
+}
+
+.module_path_left.module_path_complete{
+    border-top: 1rem dashed var(--module_complete_color);
+    border-left: 1rem solid var(--module_complete_color);
+}
+
+.module_path_right.module_path_complete{
+    border-top: 1rem dashed var(--module_complete_color);
+    border-right: 1rem solid var(--module_complete_color);
+}
+
+.module_container{
+    position: absolute;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100rem;
+    background-size : cover;
+    box-shadow: var(--module_disabled_color) 0px 1rem 2rem;
+    cursor: pointer;
+}
+
+.module_container_right{
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+}
+
+.module_container_left{
+    transform: translate(40%, -50%);
+    top: 0;
+    right: 0;
+}
+
+.module_container_complete{
+    box-shadow: var(--module_complete_color) 0px 1rem 2rem;
+}
+
+.module_container_complete:hover{
+    box-shadow: rgb(255, 136, 0) 0px 1rem 2rem;
+}
+
+.module_container_pending{
+    box-shadow: green 0px 0rem 1rem;
+    border: 0.7rem solid green;
+}
+
+.module_container_pending:hover{
+    box-shadow: rgb(1, 255, 1) 0px 0rem 2rem;
+}
+
+.module_container_complete:hover .module_type, .module_container_pending:hover .module_type{
+    width: 4.5rem;
+}
+
+.module_container_disabled{
+    filter: brightness(0.3);
+}
+
+/* .pulse:hover {
+    animation: none;
+} */
+
+.star{
+    position: absolute;
+    width: 4rem;
+    top: 0;
+    left: 0;
+    transform: translate(-20%, -20%);
+}
+
+.module_type{
+    position: absolute;
+    width: 4rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.moduleName{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: rgba(0, 0, 0, 0.578);
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.5rem;
+}
