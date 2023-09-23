@@ -31,12 +31,12 @@ export default function Home(){
     }, [user, loading]);
 
     useEffect(() => {
-        window.onload = () => {
+        
             // Simulate a minimum display time of 1 second
             setTimeout(() => {
               setPageLoading(false);
             }, 1000); // Minimum display time of 1 second
-          };
+          
     }, [])
 
     const [profile, setProfile] = useState({
