@@ -14,12 +14,12 @@ export default function Signup(){
     const [pageLoading, setPageLoading] = useState(true);
 
     useEffect(() => {
-        window.onload = () => {
+        
             // Simulate a minimum display time of 1 second
             setTimeout(() => {
               setPageLoading(false);
             }, 1000); // Minimum display time of 1 second
-          };
+          
     }, [])
 
     useEffect(() => {
