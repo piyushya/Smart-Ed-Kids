@@ -1,5 +1,6 @@
 import './styles/App.css'
-import Signup from './pages/Login'
+import Signup from './pages/Signup'
+import Login from './pages/Login'
 import Home from './pages/Home'
 import Module from './pages/Module'
 import Course from './pages/Course'
@@ -13,6 +14,8 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Signup />} />
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/login" element={<Login />} />
           <Route exact path="/course" element={<Course />} />
           <Route exact path="/chapter/:chapter" element={<Chapter />} />
           <Route exact path="/home" element={<Home />} />

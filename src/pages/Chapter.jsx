@@ -1,39 +1,45 @@
 import './styles/chapter.css'
 import MapModule from '../components/MapModule.jsx'
+import { useNavigate } from "react-router-dom";
 import Loader from '../components/Loader';
+import Button from '../components/Button';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
+import { auth } from '../utils/firebaseAuth';
+import { useAuthState } from "react-firebase-hooks/auth";
 
 
 export default function Chapter(){
     const {chapter} = useParams();
+    const [user, loading] = useAuthState(auth);
     const [pageLoading, setPageLoading] = useState(true);
-
-    // window.onload = () => {
-    //     setPageLoading(false);
-    // };
+    const navigate = useNavigate();
     
     useEffect(() => {
-        console.log("loading..")
-        setPageLoading(true); // Show loading screen
-        const handleLoad = () => {
-            console.log("done loading")
-            setPageLoading(false); // Remove loading screen
-        };
-        // Listen to the "load" event on the window to detect when the page is fully loaded
-        window.addEventListener('load', handleLoad);
-        return () => {
-            // Clean up the event listener when the component is unmounted
-            window.removeEventListener('load', handleLoad);
-        };
-    }, []);
+        window.onload = () => {
+            // Simulate a minimum display time of 1 second
+            setTimeout(() => {
+              setPageLoading(false);
+            }, 1000); // Minimum display time of 1 second
+          };
+    }, [])
 
     return (
-        <div>
+        <>
             {pageLoading && <Loader/>}
-            <div className={`map_container ${pageLoading && "page_loading"}`} style={{
+            <div className='home_button_container'>
+                <Button
+                    title="🏠"
+                    type="module_nav"
+                    handleClick={() => {
+                        navigate(`/course`);
+                    }}
+                    style="blue"
+                />
+            </div>
+            <div className={"map_container"} style={{
             backgroundImage : `url("${window.location.origin}/chapter_map.avif")`
-        }}>
+            }}>
                 <MapModule
                     chapter = {chapter}
                     id = {0}
@@ -60,6 +66,6 @@ export default function Chapter(){
                     status={"disabled"}
                 />
             </div>
-        </div>
+        </>
     )
 }

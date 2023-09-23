@@ -16,13 +16,8 @@ async function getUserData(username){
 function addNewUser(userData){
     const reference = ref(db, '/users/' + userData.username);
     set(reference,{
-        email: userData.email,
-        name: userData.name,
-        phNumber: userData.phNumber,
-        ppUrl: userData.ppUrl,
-        userId: userData.userId,
-        address: userData.address,
-        listings: []
+        "agegroup" : userData.agegroup,
+        "language" : userData.language
     })
 }
 

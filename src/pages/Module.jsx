@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import modules_data from '../module_data.json'
+import course_data from '../data/course.json'
 import { useParams } from "react-router-dom";
 import './styles/module.css'
 import Button from '../components/Button'
+import Loader from '../components/Loader';
 
 export default function Module() {
     const {id} = useParams();
@@ -14,10 +15,20 @@ export default function Module() {
     const [OptDescVisible, setOptDescVisible] = useState(false);
     const [OptClickIndex, setOptClickIndex] = useState(0);
     const [playing, setPlaying] = useState(true);
+    const [pageLoading, setPageLoading] = useState(true);
 
     const navigate = useNavigate();
 
-    const module = modules_data['modules'][id-1];
+    useEffect(() => {
+        window.onload = () => {
+            // Simulate a minimum display time of 1 second
+            setTimeout(() => {
+              setPageLoading(false);
+            }, 1000); // Minimum display time of 1 second
+          };
+    }, [])
+
+    const module = course_data["chapters"]["modules"][id];
 
     // get all the available scenes
     const scenes = module.game.situations.map((scene, index) => {
@@ -106,7 +117,7 @@ export default function Module() {
                         title="🏠"
                         type="module_nav"
                         handleClick={() => {
-                            navigate('/home');
+                            navigate(`/chapter/${module.chapter}`);
                         }}
                         style="blue"
                     />
@@ -154,6 +165,7 @@ export default function Module() {
 
     return (
         <div>
+            {pageLoading && <Loader/>}
             {OptDescVisible && 
             <div className='option_desc_shadow'>
                 <OptionDescription 

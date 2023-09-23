@@ -2,7 +2,7 @@
     "modules" : [
         {
             "title" : "Right to Education",
-            "id" : 1,
+            "id" : 0,
             "points" : 10,
             "image" : "happyMaya.png",
             "game" : {
@@ -52,7 +52,7 @@
         },
         {
             "title" : "Protection from Child labour",
-            "id" : 2,
+            "id" : 1,
             "points" : 10,
             "image" : "happyMaya.png",
             "game" : {
@@ -97,7 +97,7 @@
         },
         {
             "title" : "Protection from Abuse",
-            "id" : 3,
+            "id" : 2,
             "points" : 10,
             "image" : "happyMaya.png",
             "game" : {
@@ -142,7 +142,7 @@
         },
         {
             "title" : "Right to Play and Recreation",
-            "id" : 4,
+            "id" : 3,
             "points" : 10,
             "image" : "happyMaya.png",
             "game" : {

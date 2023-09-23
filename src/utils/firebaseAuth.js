@@ -14,6 +14,17 @@ async function SignUp (email, password) {
     await createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         // Signed in
+        
+        const user = userCredential.user;
+        return user;
+        // ...
+    })
+}
+
+async function SignIn (email, password) {
+    await signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // Signed in
         const user = userCredential.user;
         return user;
         // ...
@@ -41,6 +52,7 @@ const logout = () => {
 export {
     auth,
     SignUp,
+    SignIn,
     // registerWithEmailAndPassword,
     // sendPasswordReset,
     logout,

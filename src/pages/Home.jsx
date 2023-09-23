@@ -1,116 +1,43 @@
 import './styles/home.css'
 import modules_data from '../module_data.json'
 import tooltip_data from '../tooltip_data.json'
-import { useNavigate } from "react-router-dom";
-import { useState } from 'react'
+import { useNavigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from 'react'
 import Button from '../components/Button'
-import ModuleCard from '../components/ModuleCard';
+import Loader from '../components/Loader';
+import { logout, auth } from '../utils/firebaseAuth';
+import { useAuthState } from "react-firebase-hooks/auth";
+// import ModuleCard from '../components/ModuleCard';
 
 function handle_nav_button_click(url){
     console.log("clicked")
 }
 
-function Nav(){
-    return (
-        <div className="nav_bar">
-            <img src="./nav-Bar.png"></img>
-            <div className='nav_container'>
-                <Button 
-                    title="profile 😀" 
-                    type="home_nav_button" 
-                    handleClick = {() => {
-                        handle_nav_button_click("#");
-                    }}
-                    style="blue"
-                />
-                <Button 
-                    title="language ⚙️" 
-                    type="home_nav_button" 
-                    handleClick = {() => {
-                        handle_nav_button_click("#");
-                    }}
-                    style="red"
-                />
-                <Button 
-                    title="leaderboard 📜" 
-                    type="home_nav_button" 
-                    handleClick = {() => {
-                        handle_nav_button_click("#");
-                    }}
-                    style="green"
-                />
-                <Button 
-                    title="get-help 🆘" 
-                    type="home_nav_button" 
-                    handleClick = {() => {
-                        handle_nav_button_click("#");
-                    }}
-                    style="yellow"
-                />
-
-            </div>
-        </div>
-    )
-}
-
-const modules = modules_data.modules.map((module) => {
-    return (
-        <ModuleCard 
-            key = {module.id} 
-            name = {module.title}
-            id = {module.id}
-            frontImage = {module.game.situations[0].frontImage}
-            backImage = {module.game.situations[0].backImage}
-            points = {module.points}
-        />
-    )
-})
-
-const organisations = modules_data.organisations.map((module) => {
-    return (
-        <ModuleCard 
-            key = {module.id} 
-            name = {module.title}
-            id = {module.id}
-            frontImage = {module.game.situations[0].frontImage}
-            backImage = {module.game.situations[0].backImage}
-            points = {module.points}
-        />
-    )
-})
-
-const laws = modules_data.laws.map((module) => {
-    return (
-        <ModuleCard 
-            key = {module.id} 
-            name = {module.title}
-            id = {module.id}
-            frontImage = {module.game.situations[0].frontImage}
-            backImage = {module.game.situations[0].backImage}
-            points = {module.points}
-        />
-    )
-})
-
 export default function Home(){
-
+    const navigate = useNavigate();
     const [tooltip_desc, setTooltip_desc] = useState("");
     const [viewGame, setViewGame] = useState(false);
     const [viewGameIndex, setViewGameIndex] = useState(0);
+    const location = useLocation();
+    const userData = location.state;
 
-    const gameSrcs = [
-        "https://itch.io/embed-upload/8710761?color=333333",
-        "https://itch.io/embed/2263529",
-        "https://itch.io/embed-upload/8710761?color=333333",
-        "https://itch.io/embed-upload/8710761?color=333333"
-    ]
+    const [user, loading] = useAuthState(auth);
+    const [pageLoading, setPageLoading] = useState(true);
 
-    const gameHrefs = [
-        "https://piyushya.itch.io/child-rights-3d",
-        "https://skul1cru5h3r.itch.io/proto",
-        "https://piyushya.itch.io/child-rights-3d",
-        "https://piyushya.itch.io/child-rights-3d"
-    ]
+    useEffect(() => {
+        console.log(userData);
+        if (loading) return;
+        if (!user) return navigate("/login");
+    }, [user, loading]);
+
+    useEffect(() => {
+        window.onload = () => {
+            // Simulate a minimum display time of 1 second
+            setTimeout(() => {
+              setPageLoading(false);
+            }, 1000); // Minimum display time of 1 second
+          };
+    }, [])
 
     const [profile, setProfile] = useState({
         "name" : "Aryan",
@@ -187,6 +114,7 @@ export default function Home(){
 
     return(
         <>
+            {pageLoading && <Loader/>}
             <div className='site_logo_container'>
                 <img className='site_logo' src='./site_logo.png'/>
             </div>
@@ -202,33 +130,17 @@ export default function Home(){
             </div>}
 
             <Nav/>
-            {/* <article>
-                <h1 className='modules_heading top_modules_heading'>
-                    Know your rights through these fun modules 😀
-                </h1>
-                <div className='modules_container'>
-                    {modules}
-                </div>
+
+            {/* Course Container */}
+            <article>
+                <Button type='nav_button' title='Course'
+                    handleClick={() => {
+                        navigate("/course", {state : userData});
+                    }}
+                />
             </article>
 
-            <article>
-                <h1 className='modules_heading'>
-                    Learn about <Tooltip title="Child Rights Organisations"/> 🏛️
-                </h1>
-                <div className='modules_container'>
-                    {organisations}
-                </div>
-            </article>
-
-            <article>
-                <h1 className='modules_heading'>
-                    Learn about <Tooltip title="Indian Laws"/> that protect your rights
-                </h1>
-                <div className='modules_container'>
-                    {laws}
-                </div>
-            </article> */}
-
+            {/* Course Container */}
             <article>
                 <h1 className='modules_heading'>
                     Play these interactive games and boost your learning
@@ -269,6 +181,7 @@ export default function Home(){
                     </div> */}
                 </div>
             </article>
+
             <Bottom/>
             {viewGame && <div className='gameView'>
                 <iframe
@@ -286,5 +199,65 @@ export default function Home(){
                 />
             </div>}
         </>
+    )
+}
+
+const gameSrcs = [
+    "https://itch.io/embed-upload/8710761?color=333333",
+    "https://itch.io/embed/2263529",
+    "https://itch.io/embed-upload/8710761?color=333333",
+    "https://itch.io/embed-upload/8710761?color=333333"
+]
+
+const gameHrefs = [
+    "https://piyushya.itch.io/child-rights-3d",
+    "https://skul1cru5h3r.itch.io/proto",
+    "https://piyushya.itch.io/child-rights-3d",
+    "https://piyushya.itch.io/child-rights-3d"
+]
+
+function handleLogout(){
+    logout();
+    console.log("logout succesful")
+}
+
+function Nav(){
+    return (
+        <div className="nav_bar">
+            <img src="./nav-Bar.png"></img>
+            <div className='nav_container'>
+                <Button 
+                    title="profile 😀" 
+                    type="home_nav_button" 
+                    handleClick = {() => {
+                        handle_nav_button_click("#");
+                    }}
+                    style="blue"
+                />
+                <Button 
+                    title="logout 📤" 
+                    type="home_nav_button" 
+                    handleClick = {handleLogout}
+                    style="red"
+                />
+                <Button 
+                    title="leaderboard 📜" 
+                    type="home_nav_button" 
+                    handleClick = {() => {
+                        handle_nav_button_click("#");
+                    }}
+                    style="green"
+                />
+                <Button 
+                    title="get-help 🆘" 
+                    type="home_nav_button" 
+                    handleClick = {() => {
+                        handle_nav_button_click("#");
+                    }}
+                    style="yellow"
+                />
+
+            </div>
+        </div>
     )
 }
