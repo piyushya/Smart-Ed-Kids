@@ -1,35 +1,115 @@
-.nav_bar{
-    background-color: rgba(55, 199, 55, 0.854);
-    width: 100%;
-    overflow: hidden; 
-}
+/* Intro Container */
 
-.nav_container{
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 1rem;
-}
-
-.site_logo_container{
-    position: absolute;
-    top: 5rem;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.516);
-    padding: 1rem;
+.intro_container{
+    box-sizing: border-box;
+    /* background-color: rgb(56, 147, 147); */
+    margin: 2rem;
     display: flex;
+    padding: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-around
+}
+
+.intro_text_container{
+    box-sizing: border-box;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 45rem;
+}
+
+.intro_text{
+    font-size: 2.3rem;
+    color: rgb(63, 46, 11);
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.loginsignup_container{
+    display: flex;
+    gap: 1rem;
+}
+
+.intro_video_container{
+    width: 25rem;
+    height: 25rem;
+    /* background-color: beige; */
+    position: relative;
+}
+
+.intro_video_container img{
+    position: absolute;
+    width: 30rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.intro_video_icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+}
+
+.intro_video_icon img{
+    width: 5rem;
+    height: 5rem;
+}
+
+.intro_video_icon:hover{
+    transform: scale(1.2) translateX(-40%) translateY(-40%);
+}
+
+/* Course Container */
+
+.course_container{
+    box-sizing: border-box;
+    /* background-color: rgb(56, 147, 147); */
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(189, 161, 127);
     justify-content: center;
-    align-items: center;
-    border-radius: 0rem 1rem 1rem 0rem;
+    width: fit-content;
 }
 
-.site_logo{
-    width: 15rem;
+.course_text_container{
+    box-sizing: border-box;
+    width: 50%;
+    min-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.nav_bar img{
-    margin-top: -10rem;
+.course_intro_text{
+    padding: 2rem;
+    font-size: 1rem;
+    background-color: rgb(196, 168, 97);
 }
+
+.course_button_container{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.course_image_container{
+    width: 50%;
+    overflow: hidden;
+    min-width: 20rem;
+}
+
+.course_image_container img{
+    width: 100%;
+}
+
+/* unknown */
 
 .modules_heading{
     margin:1rem 0rem;
@@ -221,7 +301,8 @@
         flex-wrap: nowrap;
         justify-content:start;
     }
-    .nav_container{
-        position: relative;
+
+    .intro_video_container>img{
+        width: 25rem;
     }
 }

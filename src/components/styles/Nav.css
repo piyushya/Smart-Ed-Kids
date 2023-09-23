@@ -1,0 +1,50 @@
+.nav_bar{
+    background-image: url("../../assets/navbackground.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-color: rgba(62, 84, 62, 0.854);
+    width: 100%;
+    padding: 2rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.zig_zag{
+    --mask: conic-gradient(from -52.5deg at bottom,#0000,#000 1deg 104deg,#0000 105deg) 50%/7.82rem 100%;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+    padding-bottom: 4rem;
+}
+
+.nav_container{
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    font-weight: bolder;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.site_logo_container{
+    background-color: rgba(0, 0, 0, 0.516);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+.site_logo{
+    width: 10rem;
+}
+
+.nav_bar img{
+
+}
+
+@media only screen and (max-width: 768px) {
+    .nav_container{
+        position: relative;
+    }
+}

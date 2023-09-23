@@ -4,8 +4,7 @@
 
 body{
     margin: 0;
-    /* background-image: url('../assets/background.jpg'); */
-    background-color: rgb(18, 17, 19);
+    background-color: beige;
     background-size: cover;
     font-family: 'Poppins', sans-serif;
 }

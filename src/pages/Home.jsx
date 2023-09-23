@@ -1,21 +1,19 @@
 import './styles/home.css'
-import modules_data from '../module_data.json'
 import tooltip_data from '../tooltip_data.json'
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import Button from '../components/Button'
 import Loader from '../components/Loader';
+import Nav from '../components/Nav';
 import { logout, auth } from '../utils/firebaseAuth';
 import { useAuthState } from "react-firebase-hooks/auth";
+import ToolTipContainer from '../components/ToolTipContainer';
+import ToolTipElement from '../components/ToolTipElement';
 // import ModuleCard from '../components/ModuleCard';
-
-function handle_nav_button_click(url){
-    console.log("clicked")
-}
 
 export default function Home(){
     const navigate = useNavigate();
-    const [tooltip_desc, setTooltip_desc] = useState("");
+    const [tooltip_title, setTooltip_title] = useState("");
     const [viewGame, setViewGame] = useState(false);
     const [viewGameIndex, setViewGameIndex] = useState(0);
     const location = useLocation();
@@ -24,11 +22,11 @@ export default function Home(){
     const [user, loading] = useAuthState(auth);
     const [pageLoading, setPageLoading] = useState(true);
 
-    useEffect(() => {
-        console.log(userData);
-        if (loading) return;
-        if (!user) return navigate("/login");
-    }, [user, loading]);
+    // useEffect(() => {
+    //     console.log(userData);
+    //     if (loading) return;
+    //     if (!user) return navigate("/login");
+    // }, [user, loading]);
 
     useEffect(() => {
         
@@ -47,30 +45,17 @@ export default function Home(){
         "completed_modules" : []
     });
 
-    function Tooltip({title}){
-        function showDescription(){
-            if(tooltip_desc === ""){
-                setTooltip_desc(tooltip_data[title]);
-            }
-        }
-        return(
-            <>
-                {" "}<span onClick={showDescription} className='tooltip_title'>{title}</span>{" "}
-            </>
-        )
-    }
-
     function BottomInfoContainer1(){
         return(
             <div className='bottom_info_container'>
                 <h1>Helpline Numbers</h1>
                 <ul>
-                    <li><Tooltip title={"Childline India"}/></li>
-                    <li><Tooltip title={"(NCPCR)"}/></li>
-                    <li><Tooltip title={"Childline India"}/></li>
-                    <li><Tooltip title={"Child Helpline (For Online Child Abuse)"}/></li>
-                    <li><Tooltip title={"Police Helpline (Dial 100)"}/></li>
-                    <li><Tooltip title={"Women and Child Helpline (WCD)"}/></li>
+                    <li><ToolTipElement title={"Childline India"} setTooltip_title={setTooltip_title}/></li>
+                    <li><ToolTipElement title={"(NCPCR)"} setTooltip_title={setTooltip_title}/></li>
+                    <li><ToolTipElement title={"Childline India"} setTooltip_title={setTooltip_title}/></li>
+                    <li><ToolTipElement title={"Child Helpline (For Online Child Abuse)"} setTooltip_title={setTooltip_title}/></li>
+                    <li><ToolTipElement title={"Police Helpline (Dial 100)"} setTooltip_title={setTooltip_title}/></li>
+                    <li><ToolTipElement title={"Women and Child Helpline (WCD)"} setTooltip_title={setTooltip_title}/></li>
                 </ul>
             </div>
         )
@@ -81,13 +66,13 @@ export default function Home(){
             <div className='bottom_info_container'>
                 <h1>Child Rights Organisations</h1>
                 <ul>
-                    <li><Tooltip title={"National Commission for Protection of Child Rights (NCPCR)"}/></li>
-                    <li><Tooltip title={"Save the Children"}/></li>
-                    <li><Tooltip title={"Child Rights and You (CRY)"}/></li>
-                    <li><Tooltip title={"Pratham"}/></li>
-                    <li><Tooltip title={"Mobile Creches"}/></li>
-                    <li><Tooltip title={"Butterflies India"}/></li>
-                    <li><Tooltip title={"Bal Vikas Dhara (BVD)"}/></li>
+                    <li><ToolTipElement title={"National Commission for Protection of Child Rights (NCPCR)"} setTooltip_title={setTooltip_title}/></li>
+                    <li><ToolTipElement title={"Save the Children"} setTooltip_title={setTooltip_title}/></li>
+                    <li><ToolTipElement title={"Child Rights and You (CRY)"} setTooltip_title={setTooltip_title}/></li>
+                    <li><ToolTipElement title={"Pratham"} setTooltip_title={setTooltip_title}/></li>
+                    <li><ToolTipElement title={"Mobile Creches"} setTooltip_title={setTooltip_title}/></li>
+                    <li><ToolTipElement title={"Butterflies India"} setTooltip_title={setTooltip_title}/></li>
+                    <li><ToolTipElement title={"Bal Vikas Dhara (BVD)"} setTooltip_title={setTooltip_title}/></li>
                 </ul>
             </div>
         )
@@ -112,32 +97,72 @@ export default function Home(){
         setViewGameIndex(index);
     }
 
+    function navigatePage(page){
+        navigate("/login");
+    }
+
+    function handleLogout(){
+        setPageLoading(true);
+        setTimeout(() => {
+            logout();
+            setPageLoading(false)
+        }, 1000);
+        console.log("logout succesful")
+    }
+
     return(
         <>
             {pageLoading && <Loader/>}
-            <div className='site_logo_container'>
-                <img className='site_logo' src='./site_logo.png'/>
-            </div>
-            {tooltip_desc.length > 0 && 
-            <div className='tooltip_container'>
-                <div className='tooltip_wrapper'>
-                    {tooltip_desc}
-                    <button className='tooltip_close_btn' onClick={()=>{
-                        console.log("close tooltip");
-                        setTooltip_desc("");
-                    }}>close</button>
-                </div>
-            </div>}
 
-            <Nav/>
+            {tooltip_title.length > 0 && 
+            <ToolTipContainer title={tooltip_title} setTooltip_title={setTooltip_title}/>}
+
+            <Nav handleLogout={handleLogout} user={user}/>
+
+            {/* Intro Container */}
+
+            <article className='intro_container'>
+                <div className='intro_text_container'>
+                    <div className='intro_text'>
+                    Welcome to &quot;Know Your Rights JR.&quot; - 
+                    Discover, understand, and embrace your rights with us!
+                    </div>
+                    {/* Don't show login signup if user logged in */}
+                    {!user && <div className='loginsignup_container'>
+                        <Button title='SIGNUP' style='button_red' handleClick={() => {
+                            navigatePage("signup");
+                        }}/>
+                        <Button title='LOGIN' style='button_green' handleClick={() => {
+                            navigatePage("login");
+                        }}/>
+                    </div>}
+                </div>
+                <div className='intro_video_container'>
+                    <img src='./introimage.png'></img>
+                    <div className='intro_video_icon'>
+                        <img src='./play_intro.png'></img>
+                    </div>
+                </div>
+            </article>
 
             {/* Course Container */}
-            <article>
-                <Button type='nav_button' title='Course'
-                    handleClick={() => {
-                        navigate("/course", {state : userData});
-                    }}
-                />
+            <article className='course_container'>
+                <div className='course_image_container'>
+                    <img src='./course_intro.avif'></img>
+                </div>
+                <div className='course_text_container'>
+                    <div className='course_intro_text'>
+                        Venture into rights land and learn about your rights and the laws and organisations that protect your rights
+                        Venture into rights land and learn about your rights and the laws and organisations that protect your rights
+                    </div>
+                    <div className='course_button_container'>
+                        <Button type='nav_button' title='Start Learning'
+                            handleClick={() => {
+                                navigate("/course", {state : userData});
+                            }}
+                        />
+                    </div>
+                </div>
             </article>
 
             {/* Course Container */}
@@ -215,49 +240,3 @@ const gameHrefs = [
     "https://piyushya.itch.io/child-rights-3d",
     "https://piyushya.itch.io/child-rights-3d"
 ]
-
-function handleLogout(){
-    logout();
-    console.log("logout succesful")
-}
-
-function Nav(){
-    return (
-        <div className="nav_bar">
-            <img src="./nav-Bar.png"></img>
-            <div className='nav_container'>
-                <Button 
-                    title="profile 😀" 
-                    type="home_nav_button" 
-                    handleClick = {() => {
-                        handle_nav_button_click("#");
-                    }}
-                    style="blue"
-                />
-                <Button 
-                    title="logout 📤" 
-                    type="home_nav_button" 
-                    handleClick = {handleLogout}
-                    style="red"
-                />
-                <Button 
-                    title="leaderboard 📜" 
-                    type="home_nav_button" 
-                    handleClick = {() => {
-                        handle_nav_button_click("#");
-                    }}
-                    style="green"
-                />
-                <Button 
-                    title="get-help 🆘" 
-                    type="home_nav_button" 
-                    handleClick = {() => {
-                        handle_nav_button_click("#");
-                    }}
-                    style="yellow"
-                />
-
-            </div>
-        </div>
-    )
-}
