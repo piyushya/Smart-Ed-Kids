@@ -20,12 +20,12 @@ export default function Module() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        window.onload = () => {
+        
             // Simulate a minimum display time of 1 second
             setTimeout(() => {
               setPageLoading(false);
             }, 1000); // Minimum display time of 1 second
-          };
+          
     }, [])
 
     const module = course_data["chapters"]["modules"][id];
