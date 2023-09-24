@@ -220,7 +220,7 @@
 
 .games_intro{
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
     max-width: 60rem;
     flex-wrap: wrap;
@@ -231,13 +231,8 @@
     height: 11rem;
     overflow: hidden;
     position: relative;
-    border-radius: 0.5rem;
-    border: 0.3rem solid rgb(20, 69, 22);
     cursor: pointer;
-}
-
-.game_card:hover{
-    border: 0.3rem solid rgb(27, 37, 26);
+    box-shadow: 0.7rem 0.7rem 0rem 0rem rgb(255, 214, 137);
 }
 
 .game_card img{

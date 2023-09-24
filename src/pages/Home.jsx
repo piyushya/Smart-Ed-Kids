@@ -116,7 +116,7 @@ export default function Home(){
             <article className='intro_container'>
                 <div className='intro_text_container'>
                     <div className='intro_text'>
-                    Welcome to &quot;Know Your Rights JR.&quot; - 
+                    Welcome {user ? userData.username : ""} to &quot;Know Your Rights JR.&quot; - 
                     Discover, understand, and embrace your rights with us!
                     </div>
                     {/* Don't show login signup if user logged in */}
@@ -151,7 +151,7 @@ export default function Home(){
                             <img className='course_bg_image' src="./course_intro.avif"/>
                         </div>
                         <div className="course_intro_text">
-                            <div className="course_intro_title">Learn through this pathway {user ? userData.username : ""}</div>
+                            <div className="course_intro_title">Learn through this pathway</div>
                             <div className="course_intro_desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper
                             mollis tempus. Mauris eu maximus lectus, eu auctor justo. Aenean porta purus

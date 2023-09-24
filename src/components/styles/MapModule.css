@@ -102,7 +102,7 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, 70%);
     background-color: rgba(0, 0, 0, 0.578);
     color: aliceblue;
     font-weight: bold;

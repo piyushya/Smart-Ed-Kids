@@ -2,12 +2,15 @@ import { useNavigate } from "react-router-dom";
 import course from '../data/course.json'
 import './styles/MapModule.css'
 
-export default function MapModule({chapter, id, status="disabled", navigateModule}){
+export default function MapModule({chapter, id, status="disabled", navigateModule, setVideoUrl}){
     // console.log(course['chapters'][chapter])
     const module = course['chapters']['modules'][id];
     const title = module.title;
     const moduleType = module.type;
-    const back_image_url = `${window.location.origin}/chapters/${module.chapter}/${title}/${module.image}`;
+
+    // const back_image_url = `${window.location.origin}/chapters/${module.chapter}/${title}/${module.image}`;
+    const back_image_url = `${window.location.origin}/child-play.jpg`;
+
     const align = ((id%2 === 0) ? "left" : "right");
 
     let starIcon = `${window.location.origin}/`;
@@ -19,17 +22,21 @@ export default function MapModule({chapter, id, status="disabled", navigateModul
     else if(moduleType === "video")
         playImgUrl += "video.png"; 
     else
-        playImgUrl += "game.png";
+        playImgUrl += "game-console.png";
 
-    function showModule(name){
-        console.log("routing functionality for" + name);
-        navigateModule(id);
+    function handleModuleClick(){
+        if(moduleType === "quiz")
+            navigateModule(id);
+        else if(moduleType === "video")
+            setVideoUrl(module.url)
+        else
+            console.log("game")
     }
 
     return(
         <div onClick={() => {
                 if(status !== "disabled")
-                    showModule(title)
+                    handleModuleClick()
                 else
                     // show messaage to complete previous modules
                 console.log("complete previous modules");

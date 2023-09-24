@@ -1,0 +1,20 @@
+.video_container{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(33, 6, 41);
+}
+
+.video_container video{
+    height: 90vh;
+}
+
+.close_video_button{
+    position: fixed;
+    top: 4rem;
+    right: 10rem;
+}

@@ -3,19 +3,11 @@ import MapModule from '../components/MapModule.jsx'
 import { useNavigate, useLocation } from "react-router-dom";
 import Loader from '../components/Loader';
 import Button from '../components/Button';
+import VideoContainer from '../components/VideoContainer';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { auth } from '../utils/firebaseAuth';
 import { useAuthState } from "react-firebase-hooks/auth";
-
-document.querySelector("body").onscroll = function myFunction() {  
-    var scrolltotop = document.scrollingElement.scrollTop;
-    var target = document.querySelector(".map_container");
-    var xvalue = "center";
-    var factor = -0.3;
-    var yvalue = scrolltotop*factor;
-    target.style.backgroundPosition = xvalue + " " + yvalue + "px";
-}
 
 
 export default function Chapter(){
@@ -26,6 +18,17 @@ export default function Chapter(){
     const location = useLocation()
     const userData = location.state;
     console.log(userData);
+
+    document.querySelector("body").onscroll = function myFunction() {
+        var scrolltotop = document.scrollingElement.scrollTop;
+        var target = document.querySelector(".map_container");
+        var xvalue = "center";
+        var factor = -0.3;
+        var yvalue = scrolltotop*factor;
+        target.style.backgroundPosition = xvalue + " " + yvalue + "px";
+    }
+
+    const [videoUrl, setVideoUrl] = useState("");
     
     useEffect(() => {
             // Simulate a minimum display time of 1 second
@@ -41,6 +44,7 @@ export default function Chapter(){
     return (
         <>
             {pageLoading && <Loader/>}
+            {videoUrl && <VideoContainer url={videoUrl} setVideoUrl={setVideoUrl}/>}
             <div className='home_button_container'>
                 <Button
                     title="🏠"
@@ -59,6 +63,7 @@ export default function Chapter(){
                     id = {0}
                     status={"complete"}
                     navigateModule={navigateModule}
+                    setVideoUrl={setVideoUrl}
                 />
                 <MapModule
                     chapter = {chapter}
@@ -68,19 +73,80 @@ export default function Chapter(){
                 />
                 <MapModule
                     chapter = {chapter}
-                    id = {0}
+                    id = {2}
+                    status={"complete"}
+                    navigateModule={navigateModule}
+                />
+                <MapModule
+                    chapter = {chapter}
+                    id = {3}
+                    status={"complete"}
+                    navigateModule={navigateModule}
+                    setVideoUrl={setVideoUrl}
+                />
+                <MapModule
+                    chapter = {chapter}
+                    id = {4}
                     status={"pending"}
                     navigateModule={navigateModule}
                 />
                 <MapModule
                     chapter = {chapter}
-                    id = {1}
+                    id = {5}
                     status={"disabled"}
                     navigateModule={navigateModule}
                 />
                 <MapModule
                     chapter = {chapter}
-                    id = {0}
+                    id = {6}
+                    status={"disabled"}
+                    navigateModule={navigateModule}
+                />
+                <MapModule
+                    chapter = {chapter}
+                    id = {7}
+                    status={"disabled"}
+                    navigateModule={navigateModule}
+                />
+                <MapModule
+                    chapter = {chapter}
+                    id = {8}
+                    status={"disabled"}
+                    navigateModule={navigateModule}
+                />
+                <MapModule
+                    chapter = {chapter}
+                    id = {9}
+                    status={"disabled"}
+                    navigateModule={navigateModule}
+                />
+                <MapModule
+                    chapter = {chapter}
+                    id = {10}
+                    status={"disabled"}
+                    navigateModule={navigateModule}
+                />
+                <MapModule
+                    chapter = {chapter}
+                    id = {11}
+                    status={"disabled"}
+                    navigateModule={navigateModule}
+                />
+                <MapModule
+                    chapter = {chapter}
+                    id = {12}
+                    status={"disabled"}
+                    navigateModule={navigateModule}
+                />
+                <MapModule
+                    chapter = {chapter}
+                    id = {13}
+                    status={"disabled"}
+                    navigateModule={navigateModule}
+                />
+                <MapModule
+                    chapter = {chapter}
+                    id = {14}
                     status={"disabled"}
                     navigateModule={navigateModule}
                 />
