@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"; 
 import course_data from '../data/course.json'
 import { useParams } from "react-router-dom";
 import './styles/module.css'
@@ -7,6 +7,9 @@ import Button from '../components/Button'
 import Loader from '../components/Loader';
 
 export default function Module() {
+    const location = useLocation()
+    const userData = location.state;
+    console.log(userData);
     const {id} = useParams();
     const [score, setScore] = useState(0);
     const [sceneIndex, setSceneIndex] = useState(0);
@@ -117,7 +120,7 @@ export default function Module() {
                         title="🏠"
                         type="module_nav"
                         handleClick={() => {
-                            navigate(`/chapter/${module.chapter}`);
+                            navigate(`/chapter/${module.chapter}`, {state: userData});
                         }}
                         style="blue"
                     />

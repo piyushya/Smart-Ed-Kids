@@ -8,6 +8,15 @@ import { useParams } from "react-router-dom";
 import { auth } from '../utils/firebaseAuth';
 import { useAuthState } from "react-firebase-hooks/auth";
 
+document.querySelector("body").onscroll = function myFunction() {  
+    var scrolltotop = document.scrollingElement.scrollTop;
+    var target = document.querySelector(".map_container");
+    var xvalue = "center";
+    var factor = -0.3;
+    var yvalue = scrolltotop*factor;
+    target.style.backgroundPosition = xvalue + " " + yvalue + "px";
+}
+
 
 export default function Chapter(){
     const {chapter} = useParams();
@@ -25,6 +34,10 @@ export default function Chapter(){
             }, 1000); // Minimum display time of 1 second
     }, [])
 
+    function navigateModule(id){
+        navigate(`/module/${id}`, {state : userData});
+    }
+
     return (
         <>
             {pageLoading && <Loader/>}
@@ -35,36 +48,41 @@ export default function Chapter(){
                     handleClick={() => {
                         navigate("/course", {state: userData});
                     }}
-                    style="blue"
+                    style="button_blue"
                 />
             </div>
             <div className={"map_container"} style={{
-            backgroundImage : `url("${window.location.origin}/chapter_map.avif")`
+                backgroundImage : `url("${window.location.origin}/map_back.png")`
             }}>
                 <MapModule
                     chapter = {chapter}
                     id = {0}
                     status={"complete"}
+                    navigateModule={navigateModule}
                 />
                 <MapModule
                     chapter = {chapter}
                     id = {1}
                     status={"complete"}
+                    navigateModule={navigateModule}
                 />
                 <MapModule
                     chapter = {chapter}
                     id = {0}
                     status={"pending"}
+                    navigateModule={navigateModule}
                 />
                 <MapModule
                     chapter = {chapter}
                     id = {1}
                     status={"disabled"}
+                    navigateModule={navigateModule}
                 />
                 <MapModule
                     chapter = {chapter}
                     id = {0}
                     status={"disabled"}
+                    navigateModule={navigateModule}
                 />
             </div>
         </>

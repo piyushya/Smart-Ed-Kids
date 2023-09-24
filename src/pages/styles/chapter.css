@@ -1,16 +1,21 @@
 .map_container{
     width: 100vw;
-    max-width: 50rem;
     min-height: 100vh;
-    background-size: cover;
-    background-repeat: repeat;
     display: flex;
     flex-direction: column;
-    background-color: rgb(33, 197, 85);
     align-items: center;
     padding-top: 10rem;
     margin: 0 auto;
-    box-shadow: rgb(2, 107, 4) 0px 1rem 2rem;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.background_map_image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    transform: translateZ(-15px);
 }
 
 .t{

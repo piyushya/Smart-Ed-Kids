@@ -1,5 +1,174 @@
-.chapter_container{
-    width: 5rem;
-    height: 5rem;
-    background-color: blue;
+/* Course nav bar */
+
+.course_nav_bar{
+    background-image: url("../../assets/navbackground.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-color: rgba(62, 84, 62, 0.854);
+    width: 100%;
+    padding: 2rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.course_zig_zag{
+    --mask: conic-gradient(from -52.5deg at bottom,#0000,#000 1deg 104deg,#0000 105deg) 50%/7.82rem 100%;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+    padding-bottom: 4rem;
+}
+
+.course_nav_container{
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    font-weight: bolder;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.site_logo_container{
+    background-color: rgba(0, 0, 0, 0.516);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+.site_logo{
+    width: 10rem;
+}
+
+.nav_bar img{
+
+}
+
+@media only screen and (max-width: 768px) {
+    .nav_container{
+        position: relative;
+    }
+}
+
+/* other sdafsadfsdfsdfsadfsadfsdafsdfsadfasdfsdf */
+
+.chapter_float-layout {
+    float: left;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    margin: 0;
+}
+  
+.chapter_card {
+    overflow: hidden;
+    margin: 2rem;
+    box-shadow: 0rem 0rem 2rem 0.2rem rgba(255, 202, 124, 0.749);
+    border-radius: 0.5rem;
+}
+  
+.chapter_intro_text {
+    box-sizing: border-box;
+    color: black;
+    min-height: 100%; /*replace this it in width: 100%*/
+    width: 70%;
+    float: right;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.chapter_card:nth-child(even){
+    background-color: #ffd797;
+}
+
+.chapter_card:nth-child(odd){
+    background-color: #ffc281;
+}
+  
+.chapter_intro_title {
+    font-size: 1.9rem;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 1rem;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+  
+.chapter_intro_desc {
+    padding: 2rem;
+    text-align: left;
+    font-size: 1.2rem;
+    min-width: 20rem;
+}
+  
+/*add this it*/
+.chapter_intro_image {
+    display: flex;
+}
+
+/*-------------*/
+  
+.chapter_intro_image_container {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    background-color: #14823e;
+}
+
+.chapter_bg_image{
+    height: 20rem;
+}
+
+.chapter_stars_container{
+    box-sizing: border-box;
+    position: absolute;
+    height: 2rem;
+    width: 80%;
+    background-color: #00000088;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 0rem 50rem 50rem 0rem;
+}
+
+.chapter_stars_container img{
+    height: 4.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.chapter_complete_progress_bar{
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    height: 50%;
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%); 
+    z-index: 1;
+    border-radius: 0rem 50rem 50rem 0rem;
+}
+  
+/* Phone Devices Query */
+@media only screen and (max-width: 37.5em) {
+    .chapter_bg_image {
+        width: 100%;
+        height: auto;
+    }
+    
+    /*add this it*/
+    .chapter_intro_image {
+        flex-direction: column;
+    }
+    /*----------------------*/
+  
+    .chapter_intro_text {
+        width: 100%;
+        margin-top: -4px;
+    }
 }

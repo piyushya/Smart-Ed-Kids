@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 // import './styles/ModuleCard.css'
 
-export default function ModuleCard({name, id, frontImage,backImage, points}){
+export default function ModuleCard({name, id, frontImage,backImage, points, userData}){
     const navigate = useNavigate();
 
     function showModule(name){
         console.log("routing functionality for" + name);
-        navigate(`/module/${id}`);
+        navigate(`/module/${id}`, {state: userData});
     }
 
     const bgurl = `${window.location.origin}/module_education_rights/${backImage}`;

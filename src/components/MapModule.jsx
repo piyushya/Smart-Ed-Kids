@@ -2,8 +2,7 @@ import { useNavigate } from "react-router-dom";
 import course from '../data/course.json'
 import './styles/MapModule.css'
 
-export default function MapModule({chapter, id, status="disabled"}){
-    const navigate = useNavigate();
+export default function MapModule({chapter, id, status="disabled", navigateModule}){
     // console.log(course['chapters'][chapter])
     const module = course['chapters']['modules'][id];
     const title = module.title;
@@ -18,13 +17,13 @@ export default function MapModule({chapter, id, status="disabled"}){
     if(moduleType === "quiz")
         playImgUrl += "quiz.png";
     else if(moduleType === "video")
-        playImgUrl += "video.png";
+        playImgUrl += "video.png"; 
     else
         playImgUrl += "game.png";
 
     function showModule(name){
         console.log("routing functionality for" + name);
-        navigate(`/module/${id}`);
+        navigateModule(id);
     }
 
     return(

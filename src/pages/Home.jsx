@@ -138,14 +138,17 @@ export default function Home(){
             </article>
 
             {/* Course Container */}
-            <div className="course_container">
-                <div className='course_stars_container'>
-
-                </div>
+            <article className="course_container">
                 <div className="float-layout">
                     <div className="course_intro_image">
                         <div className='course_intro_image_container'>
-                            <img src="./course_intro.avif"/>
+                            <div className='course_stars_container'>
+                                <img src='./progress_star.png'></img>
+                                <div className='complete_progress_bar' style={{width : "70%"}}>
+
+                                </div>
+                            </div>
+                            <img className='course_bg_image' src="./course_intro.avif"/>
                         </div>
                         <div className="course_intro_text">
                             <div className="course_intro_title">Learn through this pathway {user ? userData.username : ""}</div>
@@ -160,13 +163,16 @@ export default function Home(){
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            {/* Course Container */}
-            <article>
-                <h1 className='modules_heading'>
+            {/* Games Container */}
+            <div className='zig_zag zig_zag_break'>
+
+            </div>
+            <article className='mini_games_container'>
+                {/* <h1 className='modules_heading'>
                     Play these interactive games and boost your learning
-                </h1>
+                </h1> */}
                 <div className='games_container'>
                     <div className='games_intro'>
                         <div className='game_card' onClick={() => {showGame(0)}}>
@@ -205,21 +211,6 @@ export default function Home(){
             </article>
 
             <Bottom/>
-            {viewGame && <div className='gameView'>
-                <iframe
-                    src={gameSrcs[viewGameIndex]}
-                    width={640} 
-                    height={380}>
-                    <a href={gameHrefs[viewGameIndex]}>
-                        Play child rights 3d on itch.io
-                    </a>
-                </iframe>
-                <Button 
-                    handleClick={() => (setViewGame(false))}
-                    title = "Close Game"
-                    style="red"
-                />
-            </div>}
         </>
     )
 }

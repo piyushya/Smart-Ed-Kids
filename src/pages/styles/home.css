@@ -82,12 +82,14 @@
 }
   
 .course_intro_text {
+    box-sizing: border-box;
     background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
     color: black;
     min-height: 100%; /*replace this it in width: 100%*/
     width: 50%;
     float: right;
     padding: 1rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -95,10 +97,11 @@
 }
   
 .course_intro_title {
-    font-size: 30px;
+    font-size: 1.9rem;
     text-align: center;
     font-weight: bold;
-    padding-top: 20px;
+    padding-top: 1rem;
+    font-family: 'Gloria Hallelujah', cursive;
 }
   
 .course_intro_desc {
@@ -122,13 +125,44 @@
     background-color: #26a312;
 }
 
-.course_intro_image_container img{
+.course_intro_image_container .course_bg_image{
     height: 25rem;
+}
+
+.course_stars_container{
+    box-sizing: border-box;
+    position: absolute;
+    height: 3rem;
+    width: 80%;
+    background-color: #00000088;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 0rem 50rem 50rem 0rem;
+}
+
+.course_stars_container img{
+    height: 5rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.complete_progress_bar{
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    height: 50%;
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%); 
+    z-index: 1;
+    border-radius: 0rem 50rem 50rem 0rem;
 }
   
 /* Phone Devices Query */
 @media only screen and (max-width: 37.5em) {
-    div.course_intro_image img {
+    div.course_intro_image .course_bg_image {
         width: 100%;
         height: auto;
     }
@@ -145,32 +179,29 @@
     }
 }
 
+/* zig-zag break */
+
+.zig_zag_break{
+    background-color: beige;
+    z-index: 2;
+}
+
+/* Games container */
+
+.mini_games_container{
+    margin-top: -4rem;
+    background-color: #ff9742;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+}
+
 /* unknown */
-
-.modules_heading{
-    margin:1rem 0rem;
-    padding: 1rem 2rem 1rem 2rem;
-    margin-bottom: 2rem;
-    background-color: rgb(0, 174, 255);
-    background-color: rgba(163, 13, 196, 0.719);
-}
-
-.top_modules_heading{
-    margin-top: 0rem;
-}
-
-.modules_container{
-    display: flex;
-    gap: 1rem;
-    padding: 0rem 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
 
 .games_container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
 }
 
 .gameView{

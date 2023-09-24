@@ -1,12 +1,12 @@
 :root{
-    --module_complete_color : rgb(115, 0, 255);
-    --module_disabled_color : rgb(92, 83, 86);
+    --module_complete_color : rgb(255, 225, 160);
+    --module_disabled_color : rgb(45, 30, 57);
 }
 
 .module_path{
     position: relative;
     height: 30vh;
-    width: 50%;
+    width: 30rem;
     border: 0rem;
     border-top: 1rem dashed var(--module_disabled_color);
 }
@@ -66,8 +66,8 @@
     border: 0.7rem solid green;
 }
 
-.module_container_pending:hover{
-    box-shadow: rgb(1, 255, 1) 0px 0rem 2rem;
+.module_container_pending:hover{ 
+    box-shadow: rgb(1, 255, 1) 0px 0rem 2rem; 
 }
 
 .module_container_complete:hover .module_type, .module_container_pending:hover .module_type{
@@ -109,4 +109,10 @@
     font-size: 1.3rem;
     padding: 0.5rem 0.7rem;
     border-radius: 0.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .module_path{
+        width: 15rem;
+    }
 }
