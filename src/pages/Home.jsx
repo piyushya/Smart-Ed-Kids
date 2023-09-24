@@ -18,6 +18,7 @@ export default function Home(){
     const [viewGameIndex, setViewGameIndex] = useState(0);
     const location = useLocation();
     const userData = location.state;
+    console.log(userData);
 
     const [user, loading] = useAuthState(auth);
     const [pageLoading, setPageLoading] = useState(true);
@@ -36,14 +37,6 @@ export default function Home(){
             }, 1000); // Minimum display time of 1 second
           
     }, [])
-
-    const [profile, setProfile] = useState({
-        "name" : "Aryan",
-        "image" : "./profile.jpg",
-        "age" : 10,
-        "score" : 0,
-        "completed_modules" : []
-    });
 
     function BottomInfoContainer1(){
         return(
@@ -98,7 +91,7 @@ export default function Home(){
     }
 
     function navigatePage(page){
-        navigate("/login");
+        navigate(`/${page}`, {state: userData });
     }
 
     function handleLogout(){
@@ -120,7 +113,6 @@ export default function Home(){
             <Nav handleLogout={handleLogout} user={user}/>
 
             {/* Intro Container */}
-
             <article className='intro_container'>
                 <div className='intro_text_container'>
                     <div className='intro_text'>
@@ -146,24 +138,29 @@ export default function Home(){
             </article>
 
             {/* Course Container */}
-            <article className='course_container'>
-                <div className='course_image_container'>
-                    <img src='./course_intro.avif'></img>
+            <div className="course_container">
+                <div className='course_stars_container'>
+
                 </div>
-                <div className='course_text_container'>
-                    <div className='course_intro_text'>
-                        Venture into rights land and learn about your rights and the laws and organisations that protect your rights
-                        Venture into rights land and learn about your rights and the laws and organisations that protect your rights
-                    </div>
-                    <div className='course_button_container'>
-                        <Button type='nav_button' title='Start Learning'
-                            handleClick={() => {
-                                navigate("/course", {state : userData});
-                            }}
-                        />
+                <div className="float-layout">
+                    <div className="course_intro_image">
+                        <div className='course_intro_image_container'>
+                            <img src="./course_intro.avif"/>
+                        </div>
+                        <div className="course_intro_text">
+                            <div className="course_intro_title">Learn through this pathway {user ? userData.username : ""}</div>
+                            <div className="course_intro_desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper
+                            mollis tempus. Mauris eu maximus lectus, eu auctor justo. Aenean porta purus
+                            vel commodo consequat.
+                            </div>
+                            <Button disabled={!user} title={user ? "START LEARNING" : "LOGIN/SIGNUP TO CONTINUE"} style='button_green' handleClick={() => {
+                                navigatePage("course");
+                            }}/>
+                        </div>
                     </div>
                 </div>
-            </article>
+            </div>
 
             {/* Course Container */}
             <article>

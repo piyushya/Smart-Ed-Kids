@@ -1,6 +1,6 @@
 import './styles/chapter.css'
 import MapModule from '../components/MapModule.jsx'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Loader from '../components/Loader';
 import Button from '../components/Button';
 import { useState, useEffect } from 'react';
@@ -14,14 +14,15 @@ export default function Chapter(){
     const [user, loading] = useAuthState(auth);
     const [pageLoading, setPageLoading] = useState(true);
     const navigate = useNavigate();
+    const location = useLocation()
+    const userData = location.state;
+    console.log(userData);
     
     useEffect(() => {
-        
             // Simulate a minimum display time of 1 second
             setTimeout(() => {
               setPageLoading(false);
             }, 1000); // Minimum display time of 1 second
-          
     }, [])
 
     return (
@@ -32,7 +33,7 @@ export default function Chapter(){
                     title="🏠"
                     type="module_nav"
                     handleClick={() => {
-                        navigate(`/course`);
+                        navigate("/course", {state: userData});
                     }}
                     style="blue"
                 />

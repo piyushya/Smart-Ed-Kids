@@ -17,7 +17,8 @@ function addNewUser(userData){
     const reference = ref(db, '/users/' + userData.username);
     set(reference,{
         "agegroup" : userData.agegroup,
-        "language" : userData.language
+        "language" : userData.language,
+        "username" : userData.username
     })
 }
 

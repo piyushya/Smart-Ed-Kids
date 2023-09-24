@@ -16,7 +16,7 @@ export default function Course(){
 
     useEffect(() => {
         if (loading) return;
-        if (!user) return navigate("/login");
+        if (!user) return navigate("/");
     }, [user, loading]);
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function Course(){
     }, [])
 
     function openChapter(chapter){
-        navigate(`/chapter/${chapter}`);
+        navigate(`/chapter/${chapter}`, {state : userData});
     }
 
     return(
@@ -39,7 +39,7 @@ export default function Course(){
                     title="🏠"
                     type="module_nav"
                     handleClick={() => {
-                        navigate("/home");
+                        navigate("/home", {state: userData });
                     }}
                     style="blue"
                 />

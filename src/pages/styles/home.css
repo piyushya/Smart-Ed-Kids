@@ -66,47 +66,83 @@
 
 /* Course Container */
 
-.course_container{
+.float-layout {
+    float: left;
+    width: 100%;
+    height: auto;
     box-sizing: border-box;
-    /* background-color: rgb(56, 147, 147); */
-    margin: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgb(189, 161, 127);
-    justify-content: center;
-    width: fit-content;
+    margin: 0;
 }
-
-.course_text_container{
-    box-sizing: border-box;
+  
+.course_container {
+    overflow: hidden;
+    margin: 2rem;
+    box-shadow: 0rem 0rem 2rem 0.2rem rgba(255, 202, 124, 0.749);
+    border-radius: 0.5rem;
+}
+  
+.course_intro_text {
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    color: black;
+    min-height: 100%; /*replace this it in width: 100%*/
     width: 50%;
-    min-width: 20rem;
+    float: right;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
-
-.course_intro_text{
-    padding: 2rem;
-    font-size: 1rem;
-    background-color: rgb(196, 168, 97);
+  
+.course_intro_title {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
 }
-
-.course_button_container{
-    background-color: aquamarine;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 1rem;
-}
-
-.course_image_container{
-    width: 50%;
-    overflow: hidden;
+  
+.course_intro_desc {
+    padding: 1rem;
+    text-align: left;
+    font-size: 1.2rem;
     min-width: 20rem;
 }
+  
+/*add this it*/
+.course_intro_image {
+    display: flex;
+}
 
-.course_image_container img{
-    width: 100%;
+/*-------------*/
+  
+.course_intro_image_container {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    background-color: #26a312;
+}
+
+.course_intro_image_container img{
+    height: 25rem;
+}
+  
+/* Phone Devices Query */
+@media only screen and (max-width: 37.5em) {
+    div.course_intro_image img {
+        width: 100%;
+        height: auto;
+    }
+    
+    /*add this it*/
+    .course_intro_image {
+        flex-direction: column;
+    }
+    /*----------------------*/
+  
+    .course_intro_text {
+        width: 100%;
+        margin-top: -4px;
+    }
 }
 
 /* unknown */
