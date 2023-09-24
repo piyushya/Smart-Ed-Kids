@@ -9,6 +9,7 @@ import { logout, auth } from '../utils/firebaseAuth';
 import { useAuthState } from "react-firebase-hooks/auth";
 import ToolTipContainer from '../components/ToolTipContainer';
 import ToolTipElement from '../components/ToolTipElement';
+import { getUserData } from '../utils/userController';
 // import ModuleCard from '../components/ModuleCard';
 
 export default function Home(){
@@ -17,11 +18,16 @@ export default function Home(){
     const [viewGame, setViewGame] = useState(false);
     const [viewGameIndex, setViewGameIndex] = useState(0);
     const location = useLocation();
-    const userData = location.state;
-    console.log(userData);
+    let userData = location.state;
 
     const [user, loading] = useAuthState(auth);
     const [pageLoading, setPageLoading] = useState(true);
+
+    // if(!userData){
+    //     getUserData(localStorage.getItem("username")).then((data) => {
+    //         userData = data;
+    //     })
+    // }
 
     // useEffect(() => {
     //     console.log(userData);
@@ -105,6 +111,13 @@ export default function Home(){
 
     return(
         <>
+            <df-messenger
+                intent=""
+                chat-title="Maya-childrights"
+                agent-id="c52c02de-4f54-4cfb-b398-2e17db987fec"
+                language-code="en"
+            >
+            </df-messenger>
             {pageLoading && <Loader/>}
 
             {tooltip_title.length > 0 && 
@@ -153,9 +166,8 @@ export default function Home(){
                         <div className="course_intro_text">
                             <div className="course_intro_title">Learn through this pathway</div>
                             <div className="course_intro_desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper
-                            mollis tempus. Mauris eu maximus lectus, eu auctor justo. Aenean porta purus
-                            vel commodo consequat.
+                            Venture into land of rights and explore your rights, Indian Laws that protect
+                            your rights, Organisations that spread awareness, and child rights around the globe 
                             </div>
                             <Button disabled={!user} title={user ? "START LEARNING" : "LOGIN/SIGNUP TO CONTINUE"} style='button_green' handleClick={() => {
                                 navigatePage("course");
@@ -170,9 +182,9 @@ export default function Home(){
 
             </div>
             <article className='mini_games_container'>
-                {/* <h1 className='modules_heading'>
+                <h1 className='mini_games_heading'>
                     Play these interactive games and boost your learning
-                </h1> */}
+                </h1>
                 <div className='games_container'>
                     <div className='games_intro'>
                         <div className='game_card' onClick={() => {showGame(0)}}>
@@ -183,21 +195,21 @@ export default function Home(){
                             </div>
                         </div>
                         <div className='game_card' onClick={() => {showGame(1)}}>
-                            <img src='./games/gameCard1.jpg'></img>
+                            <img src='./b1.jpg'></img>
                             <div className='game_card_info'>
                                 <h1>Equality Quest</h1>
                                 <p>Join a group of young adventurers on a quest to explore the world of equality and fairness.</p>
                             </div>
                         </div>
                         <div className='game_card' onClick={() => {showGame(2)}}>
-                            <img src='./games/gameCard1.jpg'></img>
+                            <img src='./b2.jpg'></img>
                             <div className='game_card_info'>
                                 <h1>Rights Defenders</h1>
                                 <p>In this action-packed role-playing game, you become child rights superhero.</p>
                             </div>
                         </div>
                         <div className='game_card' onClick={() => {showGame(3)}}>
-                            <img src='./games/gameCard1.jpg'></img>
+                            <img src='./b7.jpg'></img>
                             <div className='game_card_info'>
                                 <h1>Righteous Puzzlers</h1>
                                 <p>This jigsaw puzzle game helps children piece together the puzzle of child rights</p>
@@ -209,8 +221,22 @@ export default function Home(){
                     </div> */}
                 </div>
             </article>
-
             <Bottom/>
+            {viewGame && <div className='gameView'>
+                <iframe
+                    src={gameSrcs[viewGameIndex]}
+                    width={640} 
+                    height={380}>
+                    <a href={gameHrefs[viewGameIndex]}>
+                        Play child rights 3d on itch.io
+                    </a>
+                </iframe>
+                <Button 
+                    handleClick={() => (setViewGame(false))}
+                    title = "Close Game"
+                    style="red"
+                />
+            </div>}
         </>
     )
 }

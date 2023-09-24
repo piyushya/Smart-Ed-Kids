@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import course from '../data/course.json'
 import './styles/MapModule.css'
 
-export default function MapModule({chapter, id, status="disabled", navigateModule, setVideoUrl}){
+export default function MapModule({chapter, id, status="disabled", navigateModule, setVideoUrl, language}){
     // console.log(course['chapters'][chapter])
     const module = course['chapters']['modules'][id];
     const title = module.title;
@@ -28,7 +28,7 @@ export default function MapModule({chapter, id, status="disabled", navigateModul
         if(moduleType === "quiz")
             navigateModule(id);
         else if(moduleType === "video")
-            setVideoUrl(module.url)
+            setVideoUrl(`${module.url}_${language}.mp4`)
         else
             console.log("game")
     }

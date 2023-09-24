@@ -75,9 +75,7 @@ export default function Course(){
                                 <div className="chapter_intro_text">
                                     <div className="chapter_intro_title">What are Rights? and why should you care</div>
                                     <div className="chapter_intro_desc">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper
-                                    mollis tempus. Mauris eu maximus lectus, eu auctor justo. Aenean porta purus
-                                    vel commodo consequat.
+                                    In this exciting chapter, you will embark on a journey to discover the fascinating world of rights and why they are so important.
                                     </div>
                                     <Button disabled={!user} title="OPEN CHAPTER" style='button_green' handleClick={() => {
                                         openChapter("rights");
@@ -104,9 +102,7 @@ export default function Course(){
                                 <div className="chapter_intro_text">
                                     <div className="chapter_intro_title">What different rights you have</div>
                                     <div className="chapter_intro_desc">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper
-                                    mollis tempus. Mauris eu maximus lectus, eu auctor justo. Aenean porta purus
-                                    vel commodo consequat.
+                                    In this chapter We&apos;ll embark on a journey to explore the diverse categories of rights, Through relatable stories, engaging activities, and thought-provoking examples.
                                     </div>
                                     <Button disabled={!user} title="OPEN CHAPTER" style='button_green' handleClick={() => {
                                         openChapter("rights");
@@ -132,9 +128,7 @@ export default function Course(){
                                 <div className="chapter_intro_text">
                                     <div className="chapter_intro_title">Child Rights organisations and NGO&apos;s</div>
                                     <div className="chapter_intro_desc">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper
-                                    mollis tempus. Mauris eu maximus lectus, eu auctor justo. Aenean porta purus
-                                    vel commodo consequat.
+                                    By understanding the work of Child Rights Organizations and NGOs, you will be encouraged to take small steps in your own community to support children in need.
                                     </div>
                                     <Button disabled={!user} title="OPEN CHAPTER" style='button_green' handleClick={() => {
                                         openChapter("rights");
@@ -160,9 +154,7 @@ export default function Course(){
                                 <div className="chapter_intro_text">
                                     <div className="chapter_intro_title">Indian Laws that protect your Rights</div>
                                     <div className="chapter_intro_desc">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper
-                                    mollis tempus. Mauris eu maximus lectus, eu auctor justo. Aenean porta purus
-                                    vel commodo consequat.
+                                    We dive into the fascinating world of Indian laws and how they play a crucial role in safeguarding your rights
                                     </div>
                                     <Button disabled={!user} title="OPEN CHAPTER" style='button_green' handleClick={() => {
                                         openChapter("rights");
@@ -188,9 +180,7 @@ export default function Course(){
                                 <div className="chapter_intro_text">
                                     <div className="chapter_intro_title">Child Rights around the globe</div>
                                     <div className="chapter_intro_desc">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper
-                                    mollis tempus. Mauris eu maximus lectus, eu auctor justo. Aenean porta purus
-                                    vel commodo consequat.
+                                    In this eye-opening chapte, we embark on a global adventure to explore the fascinating concept of child rights across the world
                                     </div>
                                     <Button disabled={!user} title="OPEN CHAPTER" style='button_green' handleClick={() => {
                                         openChapter("rights");

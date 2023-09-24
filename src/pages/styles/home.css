@@ -99,7 +99,6 @@
 .course_intro_title {
     font-size: 1.9rem;
     text-align: center;
-    font-weight: bold;
     padding-top: 1rem;
     font-family: 'Gloria Hallelujah', cursive;
 }
@@ -190,9 +189,15 @@
 
 .mini_games_container{
     margin-top: -4rem;
-    background-color: #ff9742;
+    background-color: #ffc068;
     padding-top: 10rem;
     padding-bottom: 5rem;
+}
+
+.mini_games_heading{
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: center;
+    font-size: 2rem;
 }
 
 /* unknown */

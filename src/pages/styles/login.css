@@ -27,6 +27,7 @@
 
 .avatar_display img{
     transform: translate(0, 4rem);
+    height: 30rem;
 }
 
 .avatar_select_container{
@@ -78,6 +79,12 @@
     justify-content: center;
 }
 
+.personalised_data_container{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 .login_username{
     height: 3rem;
     border: 0rem;
@@ -96,9 +103,11 @@
     color: rgb(255, 255, 255);
 }
 
-.age_group_label{
-    color: rgb(21, 49, 14);
-    font-weight: bold;
+.signup_page_buttons_container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
 }
 
 @media only screen and (max-width: 768px) {

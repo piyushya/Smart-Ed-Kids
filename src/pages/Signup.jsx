@@ -13,13 +13,18 @@ export default function Signup(){
     const [user, loading] = useAuthState(auth);
     const [pageLoading, setPageLoading] = useState(true);
 
+    const [userData, setUser] = useState({
+        "username" : "",
+        "password" : "",
+        "agegroup" : 0,
+        "language" : "english"
+    })
+
     useEffect(() => {
-        
             // Simulate a minimum display time of 1 second
             setTimeout(() => {
               setPageLoading(false);
             }, 1000); // Minimum display time of 1 second
-          
     }, [])
 
     useEffect(() => {
@@ -30,16 +35,9 @@ export default function Signup(){
         if (user) navigate("/home", {state: userData });
     }, [user, loading]);
 
-    const [userData, setUser] = useState({
-        "username" : "",
-        "password" : "",
-        "agegroup" : 0,
-        "language" : "english"
-    })
-
     const [avatar, setAvatar] = useState(0);
     let src = `${window.location,origin}/avatar/${avatar}.png`;
-    const avatar_count = 3;
+    const avatar_count = 8;
 
     async function handleSignUp(){
         const email = userData.username+"@gmail.com";
@@ -77,8 +75,18 @@ export default function Signup(){
     return(
         <>
             {pageLoading && <Loader/>}
+            <div className='home_button_container'>
+                <Button
+                    title="🏠"
+                    type="module_nav"
+                    handleClick={() => {
+                        navigate("/home");
+                    }}
+                    style="button_blue"
+                />
+            </div>
             <div className='login_form_container' style={{
-                backgroundImage : `url("${window.location.origin}/login/background.jpg")`
+                backgroundImage : `url("${window.location.origin}/b6.jpg")`
             }}>
                 <form className='login_form' onSubmit={(e) => {
                     e.preventDefault();
@@ -125,7 +133,7 @@ export default function Signup(){
                         />
                     </div>
 
-                    <label>
+                    <label className='personalised_data_container'>
                         Select your age group :<br/>
                         <label>
                             8 - 12
@@ -135,7 +143,7 @@ export default function Signup(){
                                 checked={userData.agegroup ? false : true}
                                 onChange={(event) => {
                                     setUser((prev) => ({...prev, "agegroup" : (event.target.checked ? 0 : 1)}))
-                                }} 
+                                }}
                             />
                         </label><br/>
                         <label>
@@ -151,7 +159,7 @@ export default function Signup(){
                         </label>
                     </label>
                     
-                    <label>
+                    <label className='personalised_data_container'>
                         Select Language :
                         <select value={userData.language} onChange={(event) => {
                             setUser((prev) => ({...prev, "language" : event.target.value}))
@@ -160,7 +168,7 @@ export default function Signup(){
                             <option value="hindi">Hindi</option>
                         </select>
                     </label>
-                    <div>
+                    <div className='signup_page_buttons_container'>
                         <Button submitType="submit" type="nav_button" title="Start Learning"/>
                         <Button submitType="button" type="nav_button" title="Already Registered?"
                         handleClick={() => {

@@ -47,7 +47,7 @@ export default function Chapter(){
             {videoUrl && <VideoContainer url={videoUrl} setVideoUrl={setVideoUrl}/>}
             <div className='home_button_container'>
                 <Button
-                    title="🏠"
+                    title="↩️"
                     type="module_nav"
                     handleClick={() => {
                         navigate("/course", {state: userData});
@@ -64,6 +64,7 @@ export default function Chapter(){
                     status={"complete"}
                     navigateModule={navigateModule}
                     setVideoUrl={setVideoUrl}
+                    language={userData.language}
                 />
                 <MapModule
                     chapter = {chapter}
@@ -83,6 +84,7 @@ export default function Chapter(){
                     status={"complete"}
                     navigateModule={navigateModule}
                     setVideoUrl={setVideoUrl}
+                    language={userData.language}
                 />
                 <MapModule
                     chapter = {chapter}

@@ -5,7 +5,7 @@ import './styles/login.css'
 import { useState, useEffect } from 'react';
 import { SignIn, isEmailRegistered, auth } from '../utils/firebaseAuth';
 import { useAuthState } from "react-firebase-hooks/auth";
-import { userExists } from '../utils/userController';
+import { userExists, getUserData } from '../utils/userController';
 
 export default function Login(){
     const navigate = useNavigate();
@@ -13,12 +13,10 @@ export default function Login(){
     const [pageLoading, setPageLoading] = useState(true);
 
     useEffect(() => {
-        
             // Simulate a minimum display time of 1 second
             setTimeout(() => {
               setPageLoading(false);
             }, 1000); // Minimum display time of 1 second
-          
     }, [])
 
     useEffect(() => {
@@ -26,10 +24,14 @@ export default function Login(){
           // maybe trigger a loading screen
           return;
         }
-        if (user) navigate("/home", {state: userData });
+        if (user) {
+            getUserData(userData.username).then((data) => {
+                navigate("/home", {state: data });
+            })
+        }
     }, [user, loading]);
 
-    const [userData, setUser] = useState({
+    const [userData, setUserData] = useState({
         "username" : "",
         "password" : "",
     })
@@ -60,8 +62,18 @@ export default function Login(){
     return(
         <>
             {pageLoading && <Loader/>}
+            <div className='home_button_container'>
+                <Button
+                    title="🏠"
+                    type="module_nav"
+                    handleClick={() => {
+                        navigate("/home");
+                    }}
+                    style="button_blue"
+                />
+            </div>
             <div className='login_form_container' style={{
-            backgroundImage : `url("${window.location.origin}/login/background.jpg")`
+            backgroundImage : `url("${window.location.origin}/b6.jpg")`
         }}>
                 <form className='login_form' onSubmit={(e) => {
                     e.preventDefault();
@@ -85,7 +97,7 @@ export default function Login(){
                             name="username"
                             placeholder='Username'
                             value = {userData.username}
-                            onChange={(event) => {setUser((prev) => ({...prev, "username" : event.target.value}))}}
+                            onChange={(event) => {setUserData((prev) => ({...prev, "username" : event.target.value}))}}
                         />
                         <input
                             className='login_username' 
@@ -93,7 +105,7 @@ export default function Login(){
                             name="username"
                             placeholder='Password'
                             value={userData.password}
-                            onChange={(event) => {setUser((prev) => ({...prev, "password" : event.target.value}))}}
+                            onChange={(event) => {setUserData((prev) => ({...prev, "password" : event.target.value}))}}
                         />
                     </div>
                     <Button submitType="submit" type="nav_button" title="Start Learning"/>

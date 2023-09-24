@@ -117,7 +117,7 @@ export default function Module() {
                 </div>}
                 <div className='home_button_container'>
                     <Button
-                        title="🏠"
+                        title="↩️"
                         type="module_nav"
                         handleClick={() => {
                             navigate(`/chapter/${module.chapter}`, {state: userData});
