@@ -32,7 +32,7 @@ export default function Signup(){
           // maybe trigger a loading screen
           return;
         }
-        if (user) navigate("/home", {state: userData });
+        if (user) navigate("/", {state: userData });
     }, [user, loading]);
 
     const [avatar, setAvatar] = useState(0);

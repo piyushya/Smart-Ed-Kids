@@ -26,7 +26,7 @@ export default function Login(){
         }
         if (user) {
             getUserData(userData.username).then((data) => {
-                navigate("/home", {state: data });
+                navigate("/", {state: data });
             })
         }
     }, [user, loading]);
@@ -67,7 +67,7 @@ export default function Login(){
                     title="🏠"
                     type="module_nav"
                     handleClick={() => {
-                        navigate("/home");
+                        navigate("/");
                     }}
                     style="button_blue"
                 />

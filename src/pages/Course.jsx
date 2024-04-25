@@ -5,7 +5,10 @@ import { useState, useEffect } from 'react';
 import { auth } from '../utils/firebaseAuth';
 import { useAuthState } from "react-firebase-hooks/auth";
 
+import useScrollToTop from '../hooks/useScrollToTop';
+
 export default function Course(){
+    useScrollToTop();
     const navigate = useNavigate();
     const location = useLocation();
     const userData = location.state;
@@ -47,7 +50,7 @@ export default function Course(){
                             title="🏠"
                             type="module_nav"
                             handleClick={() => {
-                                navigate("/home", {state: userData });
+                                navigate("/", {state: userData });
                             }}
                             style="button_blue"
                         />

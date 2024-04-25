@@ -316,52 +316,6 @@
     transform: translate(0rem, 7rem);
 }
 
-.tooltip_title{
-    cursor: pointer;
-}
-
-.tooltip_title{
-    background-color: rgb(230, 223, 180);
-    padding: 0rem 0.5rem;
-}
-
-.tooltip_container{
-    z-index: 10;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.708);
-}
-
-.tooltip_wrapper{
-    position: relative;
-    padding : 2rem 2rem 4rem 2rem;
-    color: rgb(50, 60, 69);
-    font-weight: bold;
-    width: 20rem;
-    margin: 0 auto;
-    margin-top: 50vh;
-    transform: translate(0, -50%);
-    border-bottom: 1rem solid rgb(68, 68, 139);
-    border-radius: 0.2rem;
-    background-color: rgb(156, 156, 204);
-}
-
-.tooltip_close_btn{
-    background-color: rgb(113, 73, 73);
-    border: 0;
-    border-bottom: 0.4rem solid rgb(70, 46, 46);
-    color: rgb(195, 176, 176);
-    font-size: 1.5rem;
-    position: absolute;
-    bottom: 1rem;
-    right: 2rem;
-}
-
-.tooltip_close_btn:hover{
-    background-color: rgb(97, 73, 41);
-}
-
 @media only screen and (max-width: 768px) {
     .modules_container{
         overflow-x: scroll;
