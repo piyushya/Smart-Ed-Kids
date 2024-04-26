@@ -26,6 +26,7 @@ export default function Login(){
         }
         if (user) {
             getUserData(userData.username).then((data) => {
+                console.log(data);
                 navigate("/", {state: data });
             })
         }

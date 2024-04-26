@@ -158,7 +158,7 @@ export default function Home() {
       <article className="intro_container">
         <div className="intro_text_container">
           <div className="intro_text">
-            Welcome {user ? userData.username : ""} to &quot;Know Your Rights
+            Welcome {user ? userData?.username : ""} to &quot;Know Your Rights
             JR.&quot; - Discover, understand, and embrace your rights with us!
           </div>
           {/* Don't show login signup if user logged in */}
