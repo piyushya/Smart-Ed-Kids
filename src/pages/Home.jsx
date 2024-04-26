@@ -138,11 +138,11 @@ export default function Home() {
   return (
     <>
       <df-messenger
-        intent=""
-        chat-title="Maya-childrights"
-        agent-id="c52c02de-4f54-4cfb-b398-2e17db987fec"
+        chat-title="Maya"
+        agent-id="c1f13250-5116-4fe5-b33d-97ab1d178ac6"
         language-code="en"
       ></df-messenger>
+
       {pageLoading && <Loader />}
 
       {tooltip_title.length > 0 && (
