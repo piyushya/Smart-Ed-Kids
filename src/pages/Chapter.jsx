@@ -30,7 +30,7 @@ export default function Chapter(){
 
     const [videoUrl, setVideoUrl] = useState("");
     
-    useEffect(() => {
+    useEffect(() => { 
             // Simulate a minimum display time of 1 second
             setTimeout(() => {
               setPageLoading(false);
@@ -56,7 +56,7 @@ export default function Chapter(){
                 />
             </div>
             <div className={"map_container"} style={{
-                backgroundImage : `url("${window.location.origin}/map_back.png")`
+                backgroundImage : `url("${window.location.origin}/mod_back.png")`
             }}>
                 <MapModule
                     chapter = {chapter}
@@ -89,37 +89,37 @@ export default function Chapter(){
                 <MapModule
                     chapter = {chapter}
                     id = {4}
-                    status={"pending"}
+                    status={"complete"}
                     navigateModule={navigateModule}
                 />
                 <MapModule
                     chapter = {chapter}
                     id = {5}
-                    status={"disabled"}
+                    status={"complete"}
                     navigateModule={navigateModule}
                 />
                 <MapModule
                     chapter = {chapter}
                     id = {6}
-                    status={"disabled"}
+                    status={"complete"}
                     navigateModule={navigateModule}
                 />
                 <MapModule
                     chapter = {chapter}
                     id = {7}
-                    status={"disabled"}
+                    status={"complete"}
                     navigateModule={navigateModule}
                 />
                 <MapModule
                     chapter = {chapter}
                     id = {8}
-                    status={"disabled"}
+                    status={"complete"}
                     navigateModule={navigateModule}
                 />
                 <MapModule
                     chapter = {chapter}
                     id = {9}
-                    status={"disabled"}
+                    status={"complete"}
                     navigateModule={navigateModule}
                 />
                 <MapModule

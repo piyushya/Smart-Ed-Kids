@@ -80,7 +80,7 @@ export default function Signup(){
                     title="🏠"
                     type="module_nav"
                     handleClick={() => {
-                        navigate("/home");
+                        navigate("/");
                     }}
                     style="button_blue"
                 />
@@ -136,9 +136,9 @@ export default function Signup(){
                     <label className='personalised_data_container'>
                         Select your age group :<br/>
                         <label>
-                            8 - 12
+                            4 - 8
                             <input
-                                name="8-12"
+                                name="4-8"
                                 type="checkbox"
                                 checked={userData.agegroup ? false : true}
                                 onChange={(event) => {
@@ -147,9 +147,9 @@ export default function Signup(){
                             />
                         </label><br/>
                         <label>
-                            13 - 16
+                            9 - 14
                             <input
-                                name="13-16"
+                                name="9-14"
                                 type="checkbox"
                                 checked={userData.agegroup ? true : false}
                                 onChange={(event) => {

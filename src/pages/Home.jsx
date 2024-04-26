@@ -8,7 +8,9 @@ import { logout, auth } from "../utils/firebaseAuth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import ToolTipContainer from "../components/ToolTipContainer";
 import ToolTipElement from "../components/ToolTipElement";
-import { getUserData } from "../utils/userController";
+
+import games from "../data/games.json";
+//import { getUserData } from "../utils/userController";
 // import ModuleCard from '../components/ModuleCard';
 import { useContext } from "react";
 import { ToolTipContext } from "../App";
@@ -17,17 +19,17 @@ export default function Home() {
   const navigate = useNavigate();
   const { tooltip_title, setTooltip_title } = useContext(ToolTipContext);
   const [viewGame, setViewGame] = useState(false);
-  const [viewGameIndex, setViewGameIndex] = useState(0);
+  const [viewGameTitle, setViewGameTitle] = useState("");
   const location = useLocation();
   let userData = location.state;
 
   const [user, loading] = useAuthState(auth);
   const [pageLoading, setPageLoading] = useState(true);
 
-  useEffect(() => {
-    if (loading) return;
-    if (!user) return navigate("/login");
-  }, [user, loading]);
+  // useEffect(() => {
+  //   if (loading) return;
+  //   if (!user) return navigate("/login");
+  // }, [user, loading]);
 
   useEffect(() => {
     // Simulate a minimum display time of 1 second
@@ -101,7 +103,7 @@ export default function Home() {
 
   function Bottom() {
     return (
-      <div className="bottom_bar">
+      <div className="bottom_bar" id="getHelp">
         <footer className="foot_info">
           <BottomInfoContainer1 />
           <BottomInfoContainer2 />
@@ -117,9 +119,9 @@ export default function Home() {
     );
   }
 
-  function showGame(index) {
+  function showGame(title) {
     setViewGame(true);
-    setViewGameIndex(index);
+    setViewGameTitle(title);
   }
 
   function navigatePage(page) {
@@ -158,8 +160,9 @@ export default function Home() {
       <article className="intro_container">
         <div className="intro_text_container">
           <div className="intro_text">
-            Welcome {user ? userData?.username : ""} to &quot;Know Your Rights
-            JR.&quot; - Discover, understand, and embrace your rights with us!
+            Welcome {user ? userData?.username : ""} to &quot;My Learning
+            Maya&quot; - Learn and Play through Interactive Games, Quizzes and
+            Videos
           </div>
           {/* Don't show login signup if user logged in */}
           {!user && (
@@ -190,44 +193,62 @@ export default function Home() {
       </article>
 
       {/* Course Container */}
-      <article className="course_container">
-        <div className="float-layout">
-          <div className="course_intro_image">
-            <div className="course_intro_image_container">
-              <div className="course_stars_container">
-                <img src="./progress_star.png"></img>
-                <div
-                  className="complete_progress_bar"
-                  style={{ width: "70%" }}
-                ></div>
-              </div>
-              <img className="course_bg_image" src="./course_intro.avif" />
-            </div>
-            <div className="course_intro_text">
-              <div className="course_intro_title">
-                Learn through this pathway
-              </div>
-              <div className="course_intro_desc">
-                Venture into land of rights and explore your rights, Indian Laws
-                that protect your rights, Organisations that spread awareness,
-                and child rights around the globe
-              </div>
-              <Button
-                disabled={!user}
-                title={user ? "START LEARNING" : "LOGIN/SIGNUP TO CONTINUE"}
-                style="button_green"
-                handleClick={() => {
-                  navigatePage("course");
-                }}
-              />
-            </div>
+      <article className="course_container" id="learn">
+        <div className="course_intro_image_container">
+          <div className="course_stars_container">
+            <img src="./progress_star.png"></img>
+            <div className="complete_progress_bar"></div>
           </div>
+          <img className="course_bg_image" src="./course_intro.avif" />
+        </div>
+        <div className="course_intro_text">
+          <div className="course_intro_title">Learn about your Rights</div>
+          <div className="course_intro_desc">
+            Venture into land of rights and explore your rights, Indian Laws
+            that protect your rights, Organisations that spread awareness, and
+            child rights around the globe
+          </div>
+          <Button
+            disabled={!user}
+            title={user ? "START LEARNING" : "LOGIN/SIGNUP TO CONTINUE"}
+            style="button_green"
+            handleClick={() => {
+              navigatePage("course");
+            }}
+          />
+        </div>
+      </article>
+
+      {/* Course Container */}
+      <article className="course_container">
+        <div className="course_intro_image_container">
+          <div className="course_stars_container">
+            <img src="./progress_star.png"></img>
+            <div className="complete_progress_bar"></div>
+          </div>
+          <img className="course_bg_image" src="./course_intro.avif" />
+        </div>
+        <div className="course_intro_text">
+          <div className="course_intro_title">Learn Basic Science</div>
+          <div className="course_intro_desc">
+            Venture into land of rights and explore your rights, Indian Laws
+            that protect your rights, Organisations that spread awareness, and
+            child rights around the globe
+          </div>
+          <Button
+            disabled={!user}
+            title={user ? "START LEARNING" : "LOGIN/SIGNUP TO CONTINUE"}
+            style="button_green"
+            handleClick={() => {
+              navigatePage("course");
+            }}
+          />
         </div>
       </article>
 
       {/* Games Container */}
       <div className="zig_zag zig_zag_break"></div>
-      <article className="mini_games_container">
+      <article className="mini_games_container" id="games">
         <h1 className="mini_games_heading">
           Play these interactive games and boost your learning
         </h1>
@@ -236,7 +257,7 @@ export default function Home() {
             <div
               className="game_card"
               onClick={() => {
-                showGame(0);
+                showGame("maya-journey");
               }}
             >
               <img src="./games/gameCard1.jpg"></img>
@@ -251,7 +272,7 @@ export default function Home() {
             <div
               className="game_card"
               onClick={() => {
-                showGame(1);
+                showGame("maya-journey");
               }}
             >
               <img src="./b1.jpg"></img>
@@ -266,7 +287,7 @@ export default function Home() {
             <div
               className="game_card"
               onClick={() => {
-                showGame(2);
+                showGame("maya-journey");
               }}
             >
               <img src="./b2.jpg"></img>
@@ -281,7 +302,7 @@ export default function Home() {
             <div
               className="game_card"
               onClick={() => {
-                showGame(3);
+                showGame("maya-journey");
               }}
             >
               <img src="./b7.jpg"></img>
@@ -302,10 +323,8 @@ export default function Home() {
       <Bottom />
       {viewGame && (
         <div className="gameView">
-          <iframe src={gameSrcs[viewGameIndex]} width={640} height={380}>
-            <a href={gameHrefs[viewGameIndex]}>
-              Play child rights 3d on itch.io
-            </a>
+          <iframe src={games[viewGameTitle][0]} width="552" height="167">
+            <a href={games[viewGameTitle][1]}>Maya&#039;s Journey</a>
           </iframe>
           <Button
             handleClick={() => setViewGame(false)}
@@ -317,17 +336,3 @@ export default function Home() {
     </>
   );
 }
-
-const gameSrcs = [
-  "https://itch.io/embed-upload/8710761?color=333333",
-  "https://itch.io/embed/2263529",
-  "https://itch.io/embed-upload/8710761?color=333333",
-  "https://itch.io/embed-upload/8710761?color=333333",
-];
-
-const gameHrefs = [
-  "https://piyushya.itch.io/child-rights-3d",
-  "https://skul1cru5h3r.itch.io/proto",
-  "https://piyushya.itch.io/child-rights-3d",
-  "https://piyushya.itch.io/child-rights-3d",
-];

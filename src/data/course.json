@@ -66,7 +66,7 @@
                 "id" : 2,
                 "type" : "game",
                 "image" : "mayaVill.png",
-                "url" : "https://youtu.be/HCYLdtug8sk?si=slesD9XOjQdV3898"
+                "url" : "https://unnat1605.itch.io/mayas-journey"
             },
             {
                 "title" : "Protection from child labour",
@@ -152,12 +152,12 @@
                 "game" : {
                     "situations" : [
                         {
-                            "text" : "A 12-year-old girl named Maya lives in a rural village in India. She comes from a marginalized community and is eager to attend school. However, she faces several challenges:",
+                            "text" : "Maya faces health challenges despite the presence of the ICDS program, which is designed to address the health and nutrition needs of children in her community.",
                             "backImage" : "mayaVill.png",
                             "frontImage" : "normalMaya.png"
                         },
                         {
-                            "text" : "The nearest school is several kilometers away from her village, and there is no reliable transportation. Walking to school is not feasible due to the distance, especially during the rainy season when roads become impassable.",
+                            "text" : "The Integrated Child Development Services (ICDS) program aims to provide essential healthcare services and nutritional support to children in Maya's village.",
                             "backImage" : "villageMap.png",
                             "frontImage" : "cautiousMaya.png"
                         },
@@ -173,19 +173,18 @@
     
                     ],
                     "test" : {
-                        "text" : "What Maya and Her Guardians Can Do :",
+                        "text" : "What Maya would do in such a case ? :",
                         "options" : [
-                            "Contact Local Authorities",
-                            "Confront Local Authorities",
-                            "Give Up",
-                            "Explore Legal resources"
+                            "Maya ignores ICDS, seeks independent healthcare solutions.",
+                            "Maya engages with ICDS to address health challenges.",
+                            "Maya seeks healthcare outside ICDS due to limitations.",
+                            "Maya advocates for ICDS improvements and better healthcare access."
                         ],
-                        "correctIndex" : [0, 3],
+                        "correctIndex" : [1, 3],
                         "explanations" : [
-                            "Maya's family can reach out to local education authorities or government officials to express their concerns and seek assistance. They can inquire about transportation options or subsidies to cover educational expenses for underprivileged students.",
-                            "It's important not to engage in confrontations that could escalate tensions or damage relationships. Instead, they should strive for open, respectful dialogue with local authorities and community members.",
-                            "While it can be disheartening to face barriers to education, Maya and her family should avoid giving up too easily. Persistence and determination are essential when advocating for the right to education.",
-                            "They will explore legal recourse, such as the Right to Education Act or other relevant laws, to address the issue through official channels and ensure that Maya's rights are protected."
+                            "Maya not using ICDS might make it harder for her to get the help she needs.",
+                            "But if she speaks up to improve ICDS, it could help her and others in her village get better healthcare."
+                            
                         ]
                     }
     

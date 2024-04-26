@@ -66,30 +66,42 @@
 
 /* Course Container */
 
-.float-layout {
-    float: left;
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    margin: 0;
-}
-  
 .course_container {
-    overflow: hidden;
     margin: 2rem;
     box-shadow: 0rem 0rem 2rem 0.2rem rgba(255, 202, 124, 0.749);
     border-radius: 0.5rem;
+    display: flex;
 }
-  
+
+.course_intro_image_container {
+    flex: 1;
+    width: 100%;
+    background-color: #26a312;
+    position: relative;
+    overflow: hidden;
+}
+
+.course_stars_container{
+    position: absolute;
+    height: 3rem;
+    width: 80%;
+    background-color: #00000088;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 0rem 50rem 50rem 0rem;
+}
+
+.course_bg_image{
+    width: 100%;
+}
+
 .course_intro_text {
+    flex: 1;
     box-sizing: border-box;
     background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
     color: black;
-    min-height: 100%; /*replace this it in width: 100%*/
-    width: 50%;
-    float: right;
     padding: 1rem;
-    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -102,6 +114,12 @@
     padding-top: 1rem;
     font-family: 'Gloria Hallelujah', cursive;
 }
+
+.course_intro_image_container{
+    height: 25rem;
+}
+
+
   
 .course_intro_desc {
     padding: 1rem;
@@ -113,31 +131,6 @@
 /*add this it*/
 .course_intro_image {
     display: flex;
-}
-
-/*-------------*/
-  
-.course_intro_image_container {
-    position: relative;
-    overflow: hidden;
-    height: fit-content;
-    background-color: #26a312;
-}
-
-.course_intro_image_container .course_bg_image{
-    height: 25rem;
-}
-
-.course_stars_container{
-    box-sizing: border-box;
-    position: absolute;
-    height: 3rem;
-    width: 80%;
-    background-color: #00000088;
-    bottom: 2rem;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    border-radius: 0rem 50rem 50rem 0rem;
 }
 
 .course_stars_container img{
@@ -157,6 +150,7 @@
     background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%); 
     z-index: 1;
     border-radius: 0rem 50rem 50rem 0rem;
+    width: 70%;
 }
   
 /* Phone Devices Query */
@@ -317,6 +311,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .course_container{
+        flex-direction: column;
+    }
     .modules_container{
         overflow-x: scroll;
         flex-wrap: nowrap;

@@ -43,7 +43,7 @@ export default function Course(){
 
                 <div className="course_nav_bar course_zig_zag">
                     <div className='site_logo_container'>
-                        <img className='site_logo' src='./site_logo.png'/>
+                        <img className='site_logo' src='./site_logo3.png'/>
                     </div>
                     <div className='course_nav_container'>
                         <Button
